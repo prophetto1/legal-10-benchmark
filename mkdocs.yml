@@ -35,6 +35,7 @@ watch:
 nav:
   - Home:
     - index.md
+    - notes.md
   - User Guide:
     - installation.md
     - quick_start.md
