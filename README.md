@@ -20,24 +20,24 @@ Testing conducted using three modalities of Agentic Workflow (AG), RAG, or Close
 
 ## The 10 Skills
 
-| Skill | Name | Dataset | Description | Modality |
-|-------|------|---------|-------------|----------|
-| **S1** | Research Planning | LegalAgentBench | Plan and execute multi-step research strategy under budget with clear stop rule | Agentic Workflows (AG) |
-| **S2** | Strategic Stopping | LegalAgentBench | Terminate research at the right time given diminishing returns and uncertainty | Agentic Workflows (AG) |
-| **S3** | Known Authority | CLERC | Resolve a known citation/identifier to the correct authority quickly and exactly | Retrieval-Augmented Generation (RAG) |
-| **S4** | Unknown Authority | CLERC (semantic) | Retrieve relevant law from a fact pattern and rank/select the best authority | Retrieval-Augmented Generation (RAG) |
-| **S5** | Validate Authority | KeyCite-CLERC | Determine whether authority remains good law and summarize negative treatment | Retrieval-Augmented Generation (RAG) |
-| **S6** | Fact Extraction | CUAD | Extract specific facts from long contracts (needle-in-haystack retrieval) | Retrieval-Augmented Generation (RAG) |
-| **S7** | Distinguish Cases | CaseHOLD | Decide whether a case applies or can be distinguished based on facts/reasoning | Closed-Book (CB) |
-| **S8** | Synthesize Results | LEXam | Combine multiple authorities into a cohesive principle, memo, or argument | Closed-Book (CB) |
-| **S9** | Citation Integrity | Dahl 10-types | Avoid fabricated authority; ensure grounding and adverse authority obligations | Closed-Book (CB) |
-| **S10** | Copyright Compliance | SHIELD | Refuse protected content and minimize verbatim memorization | Closed-Book (CB) |
+| Skill | Name | Modality | Dataset |
+|-------|------|----------|---------|
+| **S1** | Research Planning | AG | LegalAgentBench |
+| **S2** | Strategic Stopping | AG | LegalAgentBench |
+| **S3** | Known Authority | RAG | CLERC |
+| **S4** | Unknown Authority | RAG | CLERC (semantic) |
+| **S5** | Validate Authority | RAG | KeyCite-CLERC |
+| **S6** | Fact Extraction | RAG | CUAD |
+| **S7** | Distinguish Cases | CB | CaseHOLD |
+| **S8** | Synthesize Results | CB | LEXam |
+| **S9** | Citation Integrity | CB | Dahl 10-types |
+| **S10** | Copyright Compliance | CB | SHIELD |
 
 ### Extensions
 
-| # | Name | Dataset | Description |
-|---|------|---------|-------------|
-| **1** | Multilingual Reasoning | FairLex | Evaluate legal reasoning across jurisdictions/languages; test quantization transparency |
+| # | Name | Modality | Dataset |
+|---|------|----------|---------|
+| **1** | Multilingual Reasoning | CB | FairLex |
 
 ## Design Principles
 
