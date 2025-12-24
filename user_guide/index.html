@@ -5,15 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../img/favicon.ico" />
-    <title>Editing Documentation - LEGAL-10 BENCHMARK</title>
+    <title>User Guide - LEGAL-10 BENCHMARK</title>
     <link rel="stylesheet" href="../css/theme.css" />
     <link rel="stylesheet" href="../css/theme_extra.css" />
         <link href="../docstrings.css" rel="stylesheet" />
     
       <script>
         // Current page data
-        var mkdocs_page_name = "Editing Documentation";
-        var mkdocs_page_input_path = "editing_documentation.md";
+        var mkdocs_page_name = "User Guide";
+        var mkdocs_page_input_path = "user_guide.md";
         var mkdocs_page_url = null;
       </script>
     
@@ -76,8 +76,8 @@
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">GUIDES</span></p>
-              <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="../user_guide/">User Guide</a>
+              <ul class="current">
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">User Guide</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../developer_guide/">Developer Guide</a>
                   </li>
@@ -101,9 +101,10 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href=".." class="icon icon-home" alt="Docs"></a> &raquo;</li>
-      <li>Editing Documentation</li>
+          <li>GUIDES &raquo;</li>
+      <li>User Guide</li>
     <li class="wy-breadcrumbs-aside">
-          <a href="https://github.com/prophetto1/legal-10-benchmark/blob/main/docs/editing_documentation.md" class="icon icon-github"> Edit on GitHub</a>
+          <a href="https://github.com/prophetto1/legal-10-benchmark/blob/main/docs/user_guide.md" class="icon icon-github"> Edit on GitHub</a>
     </li>
   </ul>
   <hr/>
@@ -111,22 +112,37 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="editing-documentation">Editing Documentation</h1>
-<p>The documentation that you are reading now is an invaluable resource for newcomers and experienced users alike. Contributions to the documentation are very welcome.</p>
-<p>We currently use the <a href="https://www.mkdocs.org/">MkDocs</a> as our static site generator and <a href="https://readthedocs.org/">ReadTheDocs</a> as our web host.</p>
-<p>To edit the documentation, first clone the repository locally, then install HELM from the repository by following the <a href="../developer_setup/">Developer Setup</a> instructions. After that, install the MkDocs dependencies by running the following from the root of the repository:</p>
-<pre><code class="language-sh">pip install -r docs/requirements.txt
-</code></pre>
-<p>You should now be able to run MkDocs from the root of the repository:</p>
-<pre><code class="language-sh">mkdocs serve
-</code></pre>
-<p>Then navigate to <a href="http://localhost:8000/">http://localhost:8000/</a> to view your locally-built documentation.</p>
-<p>The source Markdown files for the documentation are stored in the <code>docs/</code> folder. By default, MkDocs watches the source directories for changes and automatically re-renders the web pages when it detects changes.</p>
-<p>If you are creating a new page, you should add your page to the <code>nav</code> section in <code>mkdocs.yml</code>. This will add your page to the table of contents in the side menu.</p>
-<p>We make heavy use of plugins and macros for auto-generating documentation from code and docstrings. For more information, please refer to the documentation for these plugins e.g. <a href="https://mkdocs-macros-plugin.readthedocs.io/en/latest/">mkdocs-macros</a>, <a href="https://mkdocstrings.github.io/python/">mkdocstrings</a> and <a href="https://mkdocstrings.github.io/python/">mkdocstrings-python</a>.</p>
+                <h1 id="user-guide">User Guide</h1>
+<p>This guide provides comprehensive documentation for using Legal-10 Benchmark.</p>
+<h2 id="getting-started">Getting Started</h2>
+<ul>
+<li><a href="../installation/">Installation</a> - Set up your environment</li>
+<li><a href="../quick_start/">Quick Start</a> - Run your first evaluation</li>
+<li><a href="../tutorial/">Tutorial</a> - Step-by-step walkthrough</li>
+</ul>
+<h2 id="configuration-setup">Configuration &amp; Setup</h2>
+<ul>
+<li><a href="../credentials/">Credentials</a> - Configure API keys and authentication</li>
+<li><a href="../run_entries_configuration_files/">Run Entries Configuration Files</a> - Configuration file formats</li>
+<li><a href="../run_entries/">Run Entries</a> - Construct and use run entries</li>
+</ul>
+<h2 id="advanced-usage">Advanced Usage</h2>
+<ul>
+<li><a href="../benchmark/">Benchmark</a> - Advanced benchmarking features</li>
+<li><a href="../importing_custom_modules/">Importing Custom Modules</a> - Extend HELM with custom implementations</li>
+</ul>
+<h2 id="extending-legal-10">Extending Legal-10</h2>
+<ul>
+<li><a href="../adding_new_models/">Adding New Models</a> - Add model support</li>
+<li><a href="../adding_new_scenarios/">Adding New Scenarios</a> - Create custom scenarios</li>
+</ul>
               
             </div>
           </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../extension_multilingual/" class="btn btn-neutral float-left" title="Multilingual"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../developer_guide/" class="btn btn-neutral float-right" title="Developer Guide">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
 
   <hr/>
 
@@ -152,6 +168,10 @@
         </span>
     
     
+      <span><a href="../extension_multilingual/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../developer_guide/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>

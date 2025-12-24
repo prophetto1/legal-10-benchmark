@@ -63,3 +63,28 @@ code, pre {
 .wy-nav-content-wrap {
   margin-left: 300px !important;
 }
+
+/* Hide search bar */
+.wy-side-nav-search {
+  display: none !important;
+}
+
+/* Center and style the site title in the nav bar */
+.wy-nav-top {
+  background: #2980b9 !important;
+  text-align: center !important;
+  line-height: 50px !important;
+}
+
+.wy-nav-top a {
+  display: block !important;
+  width: 100% !important;
+  text-align: center !important;
+  font-weight: bold !important;
+  font-size: 1.2em !important;
+}
+
+/* Hide the mobile menu icon */
+.wy-nav-top i {
+  display: none !important;
+}
