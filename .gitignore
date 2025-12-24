@@ -43,6 +43,7 @@ notes.otl
 # For PyCharm and IntelliJ
 .idea
 .vscode
+.claude
 
 # For vim
 *.swp
