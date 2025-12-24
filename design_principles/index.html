@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Legal-10 Design Principles - Legal-10 Benchmark</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link href="../docstrings.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Legal-10 Design Principles";
+        var mkdocs_page_input_path = "design_principles.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <script src="../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]--> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Legal-10 Benchmark
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Home</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="..">Index</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../notes/">Legal-10 Development Notes</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">ARCHITECTURE</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../architecture_assessment/">HELM Framework Architectural Assessment for Legal-10 Integration</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">SKILLSETS</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../skill_1_research_planning/">Skill 1: Research Planning</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../skill_2_strategic_stopping/">Skill 2: Strategic Stopping</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../skill_3_known_authority/">Skill 3: Known Authority</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../skill_4_unknown_authority/">Skill 4: Unknown Authority</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../skill_5_validate_authority/">Skill 5: Validate Authority</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../skill_6_fact_extraction/">Skill 6: Fact Extraction</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../skill_7_distinguish_cases/">Skill 7: Distinguish Cases</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../skill_8_synthesize_results/">Skill 8: Synthesize Results</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../skill_9_citation_integrity/">Skill 9: Citation Integrity</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../skill_10_copyright_compliance/">Skill 10: Copyright Compliance</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">EXTENSIONS</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../extension_multilingual/">Multilingual</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">User Guide</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../installation/">Installation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../quick_start/">Quick Start</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tutorial/">Tutorial</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../run_entries_configuration_files/">Run Entries Configuration Files</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../run_entries/">Run Entries</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../credentials/">Credentials</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../importing_custom_modules/">Importing Custom Modules</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../adding_new_models/">Adding New Models</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../adding_new_scenarios/">Adding New Scenarios</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../benchmark/">Advanced Benchmarking Guide</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Developer Guide</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../developer_setup/">Developer Setup</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../developer_adding_new_models/">Adding New Clients</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../editing_documentation/">Editing Documentation</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Legal-10 Benchmark</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+      <li>Legal-10 Design Principles</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/prophetto1/legal-10-benchmark/blob/main/docs/design_principles.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="legal-10-design-principles">Legal-10 Design Principles</h1>
+<h2 id="overview">Overview</h2>
+<p>Legal-10 is a skill-based benchmark for evaluating legal AI systems. This document describes the design principles that guide its development.</p>
+<hr />
+<h2 id="design-principles">Design Principles</h2>
+<h3 id="1-objectivity">1. Objectivity</h3>
+<p><strong>Fixed Specification</strong>
+- Each version has a fixed specification
+- Changes to the specification require a version increment
+- Evaluations specify which version was used</p>
+<p><strong>Complete Evaluation</strong>
+- All 10 skills must be evaluated
+- No partial scores or selective omission
+- If a skill cannot be evaluated, this is explicitly noted</p>
+<p><strong>Versioning</strong>
+- Version numbers follow semantic versioning
+- Breaking changes increment major version
+- Specification changes are documented in changelog</p>
+<hr />
+<h3 id="2-transparency">2. Transparency</h3>
+<p><strong>Open Source</strong>
+- Evaluation harness is open source (HELM framework)
+- Datasets are publicly accessible or documented
+- Scoring implementations are visible
+- Run specifications are published</p>
+<p><strong>Reproducibility</strong>
+- Evaluations include SHA-256 hashes
+- Dataset versions are pinned
+- Full run bundles are preserved
+- Evaluation conditions are documented</p>
+<p><strong>Public Logging</strong>
+- Submissions are logged with timestamps
+- Historical performance is preserved
+- Append-only log prevents silent deletions</p>
+<hr />
+<h3 id="3-fairness">3. Fairness</h3>
+<p><strong>Standardized Evaluation</strong>
+- All models use identical evaluation protocol
+- Same prompts, same datasets, same metrics
+- No model-specific optimizations in core harness</p>
+<p><strong>Modality-Matched Testing</strong>
+- Closed-book tasks (S7-S10): No retrieval allowed
+- RAG tasks (S3-S6): Retrieval capability tested
+- Agentic tasks (S1-S2): Multi-step reasoning evaluated
+- Testing matches intended use patterns</p>
+<p><strong>Comparable Baselines</strong>
+- Open-weight models use same harness as API models
+- Local deployments use same evaluation as hosted services</p>
+<hr />
+<h3 id="4-gaming-resistance">4. Gaming Resistance</h3>
+<p><strong>No Selective Omission</strong>
+- Cannot cherry-pick favorable tasks
+- All 10 skills required for score reporting
+- Partial evaluation results are not published</p>
+<p><strong>Granular Reporting</strong>
+- Skill-level scores reported individually
+- Aggregate score does not hide weak performance
+- Per-instance results available for analysis</p>
+<p><strong>Multiple Evaluation Axes</strong>
+- Tests across different modalities (CB/RAG/AG)
+- Multiple metrics per skill where appropriate
+- Cannot optimize for single metric</p>
+<hr />
+<h2 id="professional-standards-grounding">Professional Standards Grounding</h2>
+<p>Legal-10 skills map to established professional competency frameworks:</p>
+<p><strong>MacCrate Report (ABA, 1992)</strong>
+- Foundational lawyering skills framework
+- Research planning, fact-finding, legal analysis</p>
+<p><strong>AALL Principles (2013)</strong>
+- Legal research competency standards
+- Authority identification and validation</p>
+<p><strong>Shultz &amp; Zedeck (2011)</strong>
+- Empirically-derived lawyer effectiveness factors
+- Strategic planning, practical judgment</p>
+<p>These frameworks represent 30+ years of validated professional standards.</p>
+<hr />
+<h2 id="skill-definitions">Skill Definitions</h2>
+<p>Legal-10 evaluates 10 distinct skills:</p>
+<table>
+<thead>
+<tr>
+<th>Skill</th>
+<th>Name</th>
+<th>Modality</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>S1</td>
+<td>Research Planning</td>
+<td>Agentic (AG)</td>
+</tr>
+<tr>
+<td>S2</td>
+<td>Strategic Stopping</td>
+<td>Agentic (AG)</td>
+</tr>
+<tr>
+<td>S3</td>
+<td>Known Authority</td>
+<td>RAG</td>
+</tr>
+<tr>
+<td>S4</td>
+<td>Unknown Authority</td>
+<td>RAG</td>
+</tr>
+<tr>
+<td>S5</td>
+<td>Validate Authority</td>
+<td>RAG</td>
+</tr>
+<tr>
+<td>S6</td>
+<td>Fact Extraction</td>
+<td>RAG</td>
+</tr>
+<tr>
+<td>S7</td>
+<td>Distinguish Cases</td>
+<td>Closed-Book (CB)</td>
+</tr>
+<tr>
+<td>S8</td>
+<td>Synthesize Results</td>
+<td>Closed-Book (CB)</td>
+</tr>
+<tr>
+<td>S9</td>
+<td>Citation Integrity</td>
+<td>Closed-Book (CB)</td>
+</tr>
+<tr>
+<td>S10</td>
+<td>Copyright Compliance</td>
+<td>Closed-Book (CB)</td>
+</tr>
+</tbody>
+</table>
+<p>Each skill is tested using the modality that most closely matches how human lawyers perform that skill in practice.</p>
+<hr />
+<h2 id="scoreboard-policy">Scoreboard Policy</h2>
+<h3 id="participation">Participation</h3>
+<ul>
+<li>Evaluation is open to any model</li>
+<li>Participation is voluntary</li>
+<li>Vendors may submit their own evaluations</li>
+<li>Community members may evaluate any accessible model</li>
+</ul>
+<h3 id="evaluated-list">"Evaluated" List</h3>
+<p>Systems that have completed full evaluation (all 10 skills) are listed with:
+- Model identifier
+- Evaluation date
+- Version tested
+- Link to run bundle</p>
+<h3 id="not-yet-evaluated-list">"Not Yet Evaluated" List</h3>
+<p>Systems that have not been evaluated are listed neutrally with status tags:
+- "No public endpoint" - Model not publicly accessible
+- "Access restricted" - Requires special access or licensing
+- "Awaiting community submission" - Public but not yet evaluated</p>
+<p>This ensures visibility of coverage gaps.</p>
+<hr />
+<h2 id="what-legal-10-measures">What Legal-10 Measures</h2>
+<p><strong>Behavioral Performance</strong>
+- How models respond to standardized legal tasks
+- Performance across 10 professional skill categories
+- Comparative capabilities under identical conditions</p>
+<p><strong>Skill-Specific Capabilities</strong>
+- Research planning quality
+- Authority identification accuracy
+- Citation integrity
+- Fact extraction precision
+- Legal reasoning capability</p>
+<hr />
+<h2 id="what-legal-10-does-not-measure">What Legal-10 Does Not Measure</h2>
+<p><strong>Architectural Parameters</strong>
+- Model size, precision, or quantization
+- Training data composition or provenance
+- Deployment infrastructure
+- Version or update history</p>
+<p><strong>Production Reliability</strong>
+- Real-world usage patterns
+- Domain-specific edge cases
+- Integration with specific workflows
+- Long-term consistency</p>
+<p><strong>Fitness for Specific Use Cases</strong>
+- Deployment safety for particular applications
+- Compliance with jurisdiction-specific requirements
+- Appropriateness for high-stakes decisions</p>
+<hr />
+<h2 id="limitations">Limitations</h2>
+<p>Legal-10 has known limitations:</p>
+<p><strong>Vendor Architecture Opacity</strong>
+- Cannot verify model parameters vendors claim
+- Cannot detect silent model version changes
+- Cannot inspect training data
+- Cannot confirm deployment configuration</p>
+<p><strong>Test Coverage</strong>
+- Tests standardized workflows, not all possible use patterns
+- Cannot evaluate vendor-specific features
+- Cannot test every prompt engineering approach
+- Evaluates API access, not internal capabilities</p>
+<p><strong>Deployment Context</strong>
+- Benchmark performance ≠ production performance
+- Controlled evaluation ≠ real-world reliability
+- Standardized prompts ≠ expert usage</p>
+<p><strong>Professional Judgment</strong>
+- Scores inform decisions, do not make them
+- Domain expertise required for fitness assessment
+- Ethical obligations remain with deployers</p>
+<hr />
+<h2 id="technical-implementation">Technical Implementation</h2>
+<h3 id="framework">Framework</h3>
+<p>Legal-10 uses Stanford CRFM's HELM (Holistic Evaluation of Language Models) framework:</p>
+<ul>
+<li>Unified model interface for open and closed models</li>
+<li>Standardized adapters for consistent prompting</li>
+<li>Reproducible evaluation with auditable run bundles</li>
+<li>Open-source implementation</li>
+</ul>
+<h3 id="dataset-sources">Dataset Sources</h3>
+<p>Datasets are either:
+- Publicly available on HuggingFace with documented IDs
+- Downloadable from documented URLs with version hashes
+- Reproducible from published sources with clear methodology</p>
+<h3 id="evaluation-process">Evaluation Process</h3>
+<ol>
+<li>Model receives standardized prompt</li>
+<li>Response is generated under specified conditions</li>
+<li>Output is scored using defined metrics</li>
+<li>Results are aggregated across instances</li>
+<li>Skill-level and aggregate scores are reported</li>
+</ol>
+<hr />
+<h2 id="governance">Governance</h2>
+<p><strong>Community Governance</strong>
+- Not controlled by any single vendor
+- Contributors receive co-author credit on publications
+- Community members have governance voting rights
+- Transparent decision-making process</p>
+<p><strong>Change Process</strong>
+- Specification changes are proposed publicly
+- Community review period before adoption
+- Breaking changes require major version increment
+- All changes documented in changelog</p>
+<hr />
+<h2 id="use-cases">Use Cases</h2>
+<p>Legal-10 is designed to support:</p>
+<p><strong>Comparative Evaluation</strong>
+- Fair comparison across different models
+- Standardized measurement of legal capabilities
+- Identification of relative strengths and weaknesses</p>
+<p><strong>Quality Assessment</strong>
+- Skill-specific performance visibility
+- Detection of capability gaps
+- Baseline competency verification</p>
+<p><strong>Informed Decision-Making</strong>
+- Input for deployment decisions (not substitute for testing)
+- Risk assessment for legal AI adoption
+- Vendor claim verification (within limitations)</p>
+<p><strong>Research</strong>
+- Reproducible benchmarking for academic studies
+- Tracking of legal AI capability development
+- Identification of areas needing improvement</p>
+<hr />
+<h2 id="what-users-should-know">What Users Should Know</h2>
+<p><strong>Legal-10 Provides:</strong>
+- Standardized comparison under identical conditions
+- Skill-level performance visibility
+- Grounding in professional standards
+- Open, auditable evaluation methodology</p>
+<p><strong>Legal-10 Does Not Provide:</strong>
+- Certification of deployment safety
+- Guarantee of production reliability
+- Replacement for domain-specific testing
+- Verification of vendor architectural claims</p>
+<p><strong>Appropriate Use:</strong>
+- As one input among many for deployment decisions
+- To identify areas requiring additional testing
+- To compare relative capabilities under controlled conditions
+- To assess baseline competency across professional skills</p>
+<p><strong>Inappropriate Use:</strong>
+- As sole basis for high-stakes deployment
+- As substitute for professional judgment
+- As certification of legal compliance
+- As verification of vendor claims about architecture</p>
+<hr />
+<h2 id="relationship-to-other-benchmarks">Relationship to Other Benchmarks</h2>
+<p>Legal-10 differs from some existing AI benchmarks in specific ways:</p>
+<p><strong>Participation Model</strong>
+- Legal-10: Open evaluation, anyone can run
+- Some benchmarks: Vendor opt-in required</p>
+<p><strong>Result Reporting</strong>
+- Legal-10: Append-only log, historical performance preserved
+- Some benchmarks: Results may be withdrawn or updated</p>
+<p><strong>Task Selection</strong>
+- Legal-10: All 10 skills required
+- Some benchmarks: May allow selective task participation</p>
+<p><strong>Methodology Transparency</strong>
+- Legal-10: Open-source harness, public datasets
+- Some benchmarks: May use proprietary test sets</p>
+<p>These are factual differences, not claims of superiority.</p>
+<hr />
+<h2 id="future-development">Future Development</h2>
+<p>Legal-10 is designed to evolve:</p>
+<p><strong>Potential Extensions</strong>
+- Multilingual legal reasoning (in development)
+- Additional professional skills
+- Cross-jurisdictional evaluation
+- Specialized legal domain testing</p>
+<p><strong>Community Input</strong>
+- Suggestions for new skills
+- Dataset contributions
+- Metric improvements
+- Framework enhancements</p>
+<p><strong>Version Progression</strong>
+- Regular updates to datasets
+- Metric refinements based on empirical analysis
+- New skills as legal AI capabilities expand</p>
+<hr />
+<h2 id="citation">Citation</h2>
+<p>When referencing Legal-10, please include:
+- Benchmark name and version
+- Evaluation date
+- Link to this documentation
+- Dataset sources used</p>
+<hr />
+<p><em>Legal-10 is an open benchmark. We welcome scrutiny, replication, and improvement suggestions.</em></p>
+              
+            </div>
+          </div><footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/prophetto1/legal-10-benchmark/" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+    
+  </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme_extra.js" defer></script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
