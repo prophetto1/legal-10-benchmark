@@ -5,6 +5,7 @@
 Citation integrity is the obligation to ensure all cited legal authorities actually exist and accurately support the propositions for which they are cited. This skill maps directly to the lawyer's ethical duty of candor to the tribunal—a duty that admits no technological excuse.
 
 **Skill Defined Under**
+
 - **MacCrate Report (1992):** Skill § 10 — "Recognizing and Resolving Ethical Dilemmas," specifically the duty of candor to the tribunal.
 - **AALL Principles (2013):** Principle V, Standard 1 — "Distinguishes between ethical and unethical uses of information... correctly attributes ideas and text to original sources."
 - **Shultz & Zedeck (2011):** Factor 21 — Integrity & Honesty.
