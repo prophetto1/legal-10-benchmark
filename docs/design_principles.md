@@ -30,7 +30,7 @@ Legal-10 is a skill-based benchmark for evaluating legal AI systems. This docume
 ### 2. Transparency
 
 **Open Source**
-- Evaluation harness is open source (HELM framework)
+- Evaluation harness is open source
 - Datasets are publicly accessible or documented
 - Scoring implementations are visible
 - Run specifications are published
@@ -224,7 +224,7 @@ Legal-10 has known limitations:
 
 ### Framework
 
-Legal-10 uses Stanford CRFM's HELM (Holistic Evaluation of Language Models) framework:
+Legal-10 implements the evaluation architecture pioneered by Stanford CRFM's HELM (Holistic Evaluation of Language Models):
 
 - Unified model interface for open and closed models
 - Standardized adapters for consistent prompting

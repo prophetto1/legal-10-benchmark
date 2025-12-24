@@ -70,9 +70,9 @@ Participation is your choice. We will:
 
 This ensures: Fair comparison across GPT-4, Claude, Llama, and other models using identical evaluation protocols.
 
-## Development Architecture - HELM
+## Architecture
 
-Legal-10 uses Stanford CRFM's Holistic Evaluation of Language Models (HELM) framework because it embodies many of the values we strive to establish moving forward:
+Legal-10 implements the evaluation architecture pioneered by Stanford CRFM's HELM (Holistic Evaluation of Language Models). We chose this foundation because it embodies the values we believe legal AI evaluation requires:
 
 - Unified model interface — open-weight + closed API
 - Standardized adapters — same prompts for all models
