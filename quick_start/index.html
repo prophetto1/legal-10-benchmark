@@ -17,6 +17,7 @@
         var mkdocs_page_url = null;
       </script>
     
+    <script src="../js/jquery-3.6.0.min.js" defer></script>
     <!--[if lt IE 9]>
       <script src="../js/html5shiv.min.js"></script>
     <![endif]--> 
@@ -31,7 +32,7 @@
           <a href=".." class="icon icon-home"> Legal-10 Benchmark
         </a><div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
-      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
   </form>
 </div>
       </div>
@@ -39,18 +40,49 @@
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption"><span class="caption-text">Home</span></p>
               <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="..">Legal-10 Benchmark</a>
+                  <li class="toctree-l1"><a class="reference internal" href="..">Index</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../notes/">Legal-10 Development Notes</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">ARCHITECTURE</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../architecture_assessment/">HELM Framework Architectural Assessment for Legal-10 Integration</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">SKILLSETS</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../skill_1_research_planning/">Skill 1: Research Planning</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../skill_2_strategic_stopping/">Skill 2: Strategic Stopping</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../skill_3_known_authority/">Skill 3: Known Authority</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../skill_4_unknown_authority/">Skill 4: Unknown Authority</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../skill_5_validate_authority/">Skill 5: Validate Authority</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../skill_6_fact_extraction/">Skill 6: Fact Extraction</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../skill_7_distinguish_cases/">Skill 7: Distinguish Cases</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../skill_8_synthesize_results/">Skill 8: Synthesize Results</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../skill_9_citation_integrity/">Skill 9: Citation Integrity</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../skill_10_copyright_compliance/">Skill 10: Copyright Compliance</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">EXTENSIONS</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../extension_multilingual/">Multilingual</a>
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">User Guide</span></p>
               <ul class="current">
                   <li class="toctree-l1"><a class="reference internal" href="../installation/">Installation</a>
                   </li>
-                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Quick Start</a>
-    <ul class="current">
-    </ul>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Quick Start</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../tutorial/">Tutorial</a>
                   </li>
@@ -66,35 +98,14 @@
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../adding_new_scenarios/">Adding New Scenarios</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../adding_new_tokenizers/">Adding New Tokenizers</a>
-                  </li>
                   <li class="toctree-l1"><a class="reference internal" href="../benchmark/">Advanced Benchmarking Guide</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../huggingface_models/">Hugging Face Model Hub Integration</a>
-                  </li>
-              </ul>
-              <p class="caption"><span class="caption-text">Reference</span></p>
-              <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="../models/">Models</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../metrics/">Metrics</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../perturbations/">Perturbations</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../scenarios/">Scenarios</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../schemas/">Schemas</a>
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">Developer Guide</span></p>
               <ul>
                   <li class="toctree-l1"><a class="reference internal" href="../developer_setup/">Developer Setup</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../code/">Code Structure</a>
-                  </li>
                   <li class="toctree-l1"><a class="reference internal" href="../developer_adding_new_models/">Adding New Clients</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../proxy_server/">Proxy Server</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../editing_documentation/">Editing Documentation</a>
                   </li>
@@ -112,9 +123,9 @@
       <div class="wy-nav-content">
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
-          <li class="breadcrumb-item">User Guide</li>
-      <li class="breadcrumb-item active">Quick Start</li>
+    <li><a href=".." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+          <li>User Guide &raquo;</li>
+      <li>Quick Start</li>
     <li class="wy-breadcrumbs-aside">
           <a href="https://github.com/prophetto1/legal-10-benchmark/blob/main/docs/quick_start.md" class="icon icon-github"> Edit on GitHub</a>
     </li>
@@ -125,252 +136,6 @@
             <div class="section" itemprop="articleBody">
               
                 <h1 id="quick-start">Quick Start</h1>
-<h1 id="legal-10-benchmark">Legal-10 Benchmark</h1>
-<h2 id="introduction">Introduction</h2>
-<p>Legal AI is already being used to make decisions that affect liberty, employment, housing, immigration status, family stability, and access to counsel. Today's evaluation ecosystem is fragmented, vendor-permissioned, and often optimized for optics rather than end-user protection.</p>
-<p>Legal-10 is an open, skill-based benchmark suite designed to make legal AI performance inspectable, comparable, and auditable—across three delivery modalities: Closed-Book (CB), Retrieval-Augmented Generation (RAG), and Agentic Workflows (AG).</p>
-<p>We open-source everything: datasets, harness, scoring, and operational tooling. The only exception is the actual administered test data, which remains private to prevent contamination and prior knowledge. We support evaluation of both open-weight and closed API models via a reproducible run-bundle protocol.</p>
-<h2 id="key-principle">Key Principle</h2>
-<p><strong>Grounded in Professional Standards.</strong> Legal skills are not one task.</p>
-<ul>
-<li>MacCrate Report (ABA, 1992) — foundational lawyering skills</li>
-<li>AALL Principles &amp; Standards (2013) — legal research competency standards</li>
-<li>Shultz &amp; Zedeck (2011) — empirically-derived lawyer effectiveness factors</li>
-</ul>
-<p>Every skill maps to reputable frameworks the legal profession has validated over 30+ years. These standards are used to translate human-lawyer competencies into 10 minimal viable tests across distinct cognitive circuits.</p>
-<p>Testing conducted using three modalities of Agentic Workflow (AG), RAG, or Closed Book (CB). Each skill is tested in the modality that most closely matches how human lawyers perform that skill in computer-mediated work.</p>
-<h2 id="the-10-skills">The 10 Skills</h2>
-<table>
-<thead>
-<tr>
-<th>Skill</th>
-<th>Name</th>
-<th>Dataset</th>
-<th>Description</th>
-<th>Modality</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>S1</strong></td>
-<td>Research Planning</td>
-<td>LegalAgentBench</td>
-<td>Plan and execute multi-step research strategy under budget with clear stop rule</td>
-<td>Agentic Workflows (AG)</td>
-</tr>
-<tr>
-<td><strong>S2</strong></td>
-<td>Strategic Stopping</td>
-<td>LegalAgentBench</td>
-<td>Terminate research at the right time given diminishing returns and uncertainty</td>
-<td>Agentic Workflows (AG)</td>
-</tr>
-<tr>
-<td><strong>S3</strong></td>
-<td>Known Authority</td>
-<td>CLERC</td>
-<td>Resolve a known citation/identifier to the correct authority quickly and exactly</td>
-<td>Retrieval-Augmented Generation (RAG)</td>
-</tr>
-<tr>
-<td><strong>S4</strong></td>
-<td>Unknown Authority</td>
-<td>CLERC (semantic)</td>
-<td>Retrieve relevant law from a fact pattern and rank/select the best authority</td>
-<td>Retrieval-Augmented Generation (RAG)</td>
-</tr>
-<tr>
-<td><strong>S5</strong></td>
-<td>Validate Authority</td>
-<td>KeyCite-CLERC</td>
-<td>Determine whether authority remains good law and summarize negative treatment</td>
-<td>Retrieval-Augmented Generation (RAG)</td>
-</tr>
-<tr>
-<td><strong>S6</strong></td>
-<td>Fact Extraction</td>
-<td>CUAD</td>
-<td>Extract specific facts from long contracts (needle-in-haystack retrieval)</td>
-<td>Retrieval-Augmented Generation (RAG)</td>
-</tr>
-<tr>
-<td><strong>S7</strong></td>
-<td>Distinguish Cases</td>
-<td>CaseHOLD</td>
-<td>Decide whether a case applies or can be distinguished based on facts/reasoning</td>
-<td>Closed-Book (CB)</td>
-</tr>
-<tr>
-<td><strong>S8</strong></td>
-<td>Synthesize Results</td>
-<td>LEXam</td>
-<td>Combine multiple authorities into a cohesive principle, memo, or argument</td>
-<td>Closed-Book (CB)</td>
-</tr>
-<tr>
-<td><strong>S9</strong></td>
-<td>Citation Integrity</td>
-<td>Dahl 10-types</td>
-<td>Avoid fabricated authority; ensure grounding and adverse authority obligations</td>
-<td>Closed-Book (CB)</td>
-</tr>
-<tr>
-<td><strong>S10</strong></td>
-<td>Copyright Compliance</td>
-<td>SHIELD</td>
-<td>Refuse protected content and minimize verbatim memorization</td>
-<td>Closed-Book (CB)</td>
-</tr>
-</tbody>
-</table>
-<h3 id="extensions">Extensions</h3>
-<table>
-<thead>
-<tr>
-<th>#</th>
-<th>Name</th>
-<th>Dataset</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>1</strong></td>
-<td>Multilingual Reasoning</td>
-<td>FairLex</td>
-<td>Evaluate legal reasoning across jurisdictions/languages; test quantization transparency</td>
-</tr>
-</tbody>
-</table>
-<h2 id="design-principles">Design Principles</h2>
-<h3 id="objectivity">Objectivity</h3>
-<ul>
-<li>Fixed spec per version — changes bump the version</li>
-<li>No selective omission or quiet withdrawal — full eval split or no score</li>
-</ul>
-<h3 id="transparency">Transparency</h3>
-<ul>
-<li>Open-source harness — datasets, scoring, tools</li>
-<li>Auditable run bundles — SHA-256 hashes, signed manifests</li>
-<li>Public append-only log — all submissions preserved</li>
-</ul>
-<h3 id="fairness">Fairness</h3>
-<ul>
-<li>Comparable baselines — open and closed models use identical harness</li>
-<li>Modality-matched testing — CB vs RAG vs AG reflects real lawyer workflows</li>
-</ul>
-<h3 id="gaming-resistant">Gaming-Resistant</h3>
-<ul>
-<li>No selective omission → must run all 10 skills</li>
-<li>Skill-level reporting → can't hide weak skills in aggregate</li>
-<li>Visible failure modes → can't hide how it failed</li>
-</ul>
-<h2 id="scoreboard-policy">Scoreboard Policy</h2>
-<p>Participation is your choice. We will:</p>
-<ol>
-<li>List all evaluated systems with linked run bundles ("Evaluated")</li>
-<li>Maintain a neutral "Not Yet Evaluated" coverage list</li>
-</ol>
-<p><strong>Coverage disclosure.</strong> Each "Not Yet Evaluated" entry includes a neutral status tag (e.g., "no public endpoint," "access restricted," "awaiting community submission").</p>
-<p>This ensures: Fair comparison across GPT-4, Claude, Llama, and other models using identical evaluation protocols.</p>
-<h2 id="development-architecture-helm">Development Architecture - HELM</h2>
-<p>Legal-10 uses Stanford CRFM's Holistic Evaluation of Language Models (HELM) framework because it embodies many of the values we strive to establish moving forward:</p>
-<ul>
-<li>Unified model interface — open-weight + closed API</li>
-<li>Standardized adapters — same prompts for all models</li>
-<li>Reproducible evaluation — auditable run bundles</li>
-<li>Transparent metrics — open-source scoring</li>
-</ul>
-<h2 id="community-driven">Community-Driven</h2>
-<p>Legal-10 is community-governed, not vendor-controlled. We ask for your help in pushing this benchmark initiative. We need a fair and comprehensive benchmark that end users can rely on to better understand the quality implications of a product they are using or considering.</p>
-<p><strong>Benefits:</strong> Co-author credit on papers, governance voting rights, contributor recognition</p>
-<hr />
-<h2 id="skill-definitions-professional-standards-mapping">Skill Definitions &amp; Professional Standards Mapping</h2>
-<h3 id="category-of-legal-work-performed-by-ai-or-legal-ai">Category of Legal Work Performed by AI or Legal-AI</h3>
-<p><strong>Defining What Skills are Required to Perform Legal Work</strong></p>
-<ul>
-<li><strong>MacCrate Report:</strong> American Bar Association. (1992). Legal education and professional development: An educational continuum (Report of the Task Force on Law Schools and the Profession: Narrowing the Gap), 138–141 (Skill § 3).</li>
-<li><strong>AALL Principles:</strong> American Association of Law Libraries. (2013). Principles and standards for legal research competencies. Standard II &amp; III.</li>
-<li><strong>Shultz &amp; Zedeck:</strong> Shultz, M. M., &amp; Zedeck, S. (2011). Predicting lawyer effectiveness: Broadening the basis for law school admission decisions. Law &amp; Social Inquiry, 36(3), 620-661.</li>
-</ul>
-<p>This study operationalizes the MacCrate Report's foundational skills, the AALL's competency standards, and the empirical factors identified by Shultz &amp; Zedeck. Each of the ten categories represents a distinct cognitive "circuit" that is required for effective legal practice.</p>
-<h3 id="skill-1-formulating-a-research-plan">Skill 1. Formulating a Research Plan</h3>
-<ul>
-<li><strong>MacCrate Citation:</strong> Skill § 3.3(a): Requiring the ability to "identify the full range of search strategies" and "devising and implementing a coherent and effective research design."</li>
-<li><strong>AALL Citation:</strong> Principle II, Standard 1: "A successful legal researcher... identifies the best search strategy for the research need."</li>
-<li><strong>Shultz &amp; Zedeck:</strong> Factor 14: Strategic Planning. "Plans and strategizes to address present and future issues and goals."</li>
-</ul>
-<p><strong>The Skill:</strong> Constructing a systematic research strategy that identifies relevant legal issues, selects appropriate sources and search methods, sequences tasks efficiently, and establishes scope parameters before execution begins.</p>
-<h3 id="skill-2-strategic-stopping">Skill 2. Strategic Stopping</h3>
-<ul>
-<li><strong>MacCrate Citation:</strong> Skill § 3.3(a)(iii): Explicitly requires "assessing the feasibility of research strategies" in terms of "time and financial constraints." Skill § 3.3(b) requires the lawyer to "monitor the results" and "modify the plan," which implicitly includes the decision to terminate the plan.</li>
-<li><strong>AALL Citation:</strong> Principle II, Standard 4: "Recognizes when sufficient research has been done to adequately address the legal issue." (This is the literal "stopping rule" standard).</li>
-<li><strong>Shultz &amp; Zedeck:</strong> Factor 13: Organizing and Managing One's Own Work. "Uses time efficiently... allocates time in proportion to importance of task." Factor 12 (Strategic Planning) also covers "allocating resources" effectively.</li>
-</ul>
-<p><strong>The Skill:</strong> Knowing when sufficient research has been conducted to answer the legal question with a high degree of confidence, and when further searching is diminishing returns or "churning." It involves the cognitive "switch" from seeking to synthesizing.</p>
-<h3 id="skill-3-finding-known-authority">Skill 3. Finding Known Authority</h3>
-<ul>
-<li><strong>MacCrate Citation:</strong> Skill § 3.2: "Knowledge of the Fundamental Tools of Legal Research," including the ability to utilize "primary and secondary sources."</li>
-<li><strong>AALL Citation:</strong> Principle II, Standard 2: "Demonstrates the ability to find the full text of the case or statute... given a legal citation."</li>
-<li><strong>Shultz &amp; Zedeck:</strong> Factor 6: Fact Finding. "Able to identify relevant facts and issues in case."</li>
-</ul>
-<p><strong>The Skill:</strong> Precise retrieval of a specific legal authority or record item when the target is already identified by a citation or other unique handle (case cite, statute section, docket entry, rule number, Bates range, exhibit ID).</p>
-<h3 id="skill-4-finding-unknown-authority">Skill 4. Finding Unknown Authority</h3>
-<ul>
-<li><strong>MacCrate Citation:</strong> Skill § 3.2(a): The ability to use "secondary sources" as "tools for finding primary authority."</li>
-<li><strong>AALL Citation:</strong> Principle II, Standard 3: "Given a legal topic, demonstrate the ability to identify secondary sources... to find relevant primary law."</li>
-<li><strong>Shultz &amp; Zedeck:</strong> Factor 7: Researching the Law. "Utilizes appropriate sources and strategies to identify issues and derive solutions."</li>
-</ul>
-<p><strong>The Skill:</strong> Discovering relevant legal authority when the citation to be used is yet unknown. This process involves examining the fact pattern, issue, or question and iteratively retrieving, refining, and selecting controlling/persuasive sources.</p>
-<h3 id="skill-5-updating-and-validating-authority">Skill 5. Updating and Validating Authority</h3>
-<ul>
-<li><strong>MacCrate Citation:</strong> Skill § 3.1: "Knowledge of the Nature of Legal Rules," including understanding "the hierarchy of authority."</li>
-<li><strong>AALL Citation:</strong> Principle III, Standard 2: "Checks the currency of the law... [and] verifies that the authority is current and still good law."</li>
-<li><strong>Shultz &amp; Zedeck:</strong> Factor 5: Researching the Law. (Implicit in identifying current solutions).</li>
-</ul>
-<p><strong>The Skill:</strong> Verifying that a legal authority remains valid by checking subsequent treatment (overruled, distinguished, questioned, followed), legislative amendments, or other developments affecting its precedential value.</p>
-<h3 id="skill-6-fact-extraction">Skill 6. Fact Extraction</h3>
-<ul>
-<li><strong>MacCrate Citation:</strong> Skill § 4.1: "Factual Investigation," including the ability to "identify factual issues" and "determine the nature of the needed facts."</li>
-<li><strong>AALL Citation:</strong> [Gap — AALL focuses on legal research, not document review. Consider noting this as an extension.]</li>
-<li><strong>Shultz &amp; Zedeck:</strong> Factor 6: Fact Finding. "Able to identify relevant facts and issues in case."</li>
-</ul>
-<p><strong>The Skill:</strong> Identifying, extracting, and organizing legally relevant facts from source documents (contracts, discovery materials, transcripts, filings) to support analysis or case strategy.</p>
-<h3 id="skill-7-distinguishing-cases">Skill 7. Distinguishing Cases</h3>
-<ul>
-<li><strong>MacCrate Citation:</strong> Skill § 3.3(c): "Evaluating information... distinguishing cases on their facts and reasoning."</li>
-<li><strong>AALL Citation:</strong> Principle IV, Standard 1: "Analyzes information to determine its relevance to the specific research need."</li>
-<li><strong>Shultz &amp; Zedeck:</strong> Factor 1: Analysis and Reasoning. "Uses analytical skills, logic, and reasoning to approach problems and to formulate conclusions."</li>
-</ul>
-<p><strong>The Skill:</strong> Analyzing whether a precedent applies by comparing material facts, legal issues, and reasoning, and articulating grounds on which it can be distinguished or must be followed.</p>
-<h3 id="skill-8-synthesizing-results">Skill 8. Synthesizing Results</h3>
-<ul>
-<li><strong>MacCrate Citation:</strong> Skill § 2.2: "Legal Analysis and Reasoning... synthesizing the holdings of multiple cases."</li>
-<li><strong>AALL Citation:</strong> Principle IV, Standard 2: "Integrates the results of the research into a cohesive argument or product."</li>
-<li><strong>Shultz &amp; Zedeck:</strong> Factor 9: Writing. "Writes clearly, efficiently and persuasively."</li>
-</ul>
-<p><strong>The Skill:</strong> Integrating holdings, rules, and reasoning from multiple authorities into a coherent legal principle, argument, or work product that addresses the research question comprehensively.</p>
-<h3 id="skill-9-citation-integrity">Skill 9. Citation Integrity</h3>
-<ul>
-<li><strong>MacCrate Citation:</strong> Skill § 10: "Recognizing and Resolving Ethical Dilemmas," specifically the duty of candor to the tribunal.</li>
-<li><strong>AALL Citation:</strong> Principle V, Standard 1: "Distinguishes between ethical and unethical uses of information... correctly attributes ideas and text to original sources."</li>
-<li><strong>Shultz &amp; Zedeck:</strong> Factor 21: Integrity &amp; Honesty. "Has core values and beliefs; acts with integrity and honesty."</li>
-</ul>
-<p><strong>The Skill:</strong> Ensuring all cited authorities (a) actually exist, (b) accurately support the propositions cited, (c) are properly attributed, and (d) include disclosure of adverse authority as required by professional obligations.</p>
-<h3 id="skill-10-copyright-compliance">Skill 10. Copyright Compliance</h3>
-<ul>
-<li><strong>MacCrate Citation:</strong> Skill § 10: "Recognizing and Resolving Ethical Dilemmas," including compliance with applicable law.</li>
-<li><strong>AALL Citation:</strong> Principle V, Standard 1: "Distinguishes between ethical and unethical uses of information... respects intellectual property rights."</li>
-<li><strong>Shultz &amp; Zedeck:</strong> Factor 21: Integrity &amp; Honesty. "Acts with integrity and honesty."</li>
-</ul>
-<p><strong>The Skill:</strong> Refusing to reproduce protected content verbatim, respecting intellectual property boundaries, and minimizing memorization-based reproduction of copyrighted material.</p>
-<h3 id="global-extension-module-multilingual-reasoning">Global Extension Module - Multilingual Reasoning</h3>
-<ul>
-<li><strong>MacCrate Citation:</strong> [Gap — 1992 report is US-centric. Consider framing as extension for global legal AI deployment.]</li>
-<li><strong>AALL Citation:</strong> [Gap — 2013 standards are US-focused.]</li>
-<li><strong>Shultz &amp; Zedeck:</strong> Factor 26: "Able to See the World Through the Eyes of Others." Factor 4: Practical Judgment — applicable across contexts.</li>
-</ul>
-<p><strong>The Skill:</strong> Applying legal reasoning consistently across languages, jurisdictions, and legal traditions without systematic performance degradation or bias introduced by linguistic factors.</p>
               
             </div>
           </div><footer>
@@ -410,15 +175,14 @@
     
   </span>
 </div>
-    <script src="../js/jquery-3.6.0.min.js"></script>
-    <script>var base_url = "..";</script>
-    <script src="../js/theme_extra.js"></script>
-    <script src="../js/theme.js"></script>
-      <script src="../search/main.js"></script>
-    <script>
-        jQuery(function () {
+    <script>var base_url = '..';</script>
+    <script src="../js/theme_extra.js" defer></script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
             SphinxRtdTheme.Navigation.enable(true);
-        });
+        };
     </script>
 
 </body>

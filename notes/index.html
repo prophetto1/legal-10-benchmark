@@ -17,6 +17,7 @@
         var mkdocs_page_url = null;
       </script>
     
+    <script src="../js/jquery-3.6.0.min.js" defer></script>
     <!--[if lt IE 9]>
       <script src="../js/html5shiv.min.js"></script>
     <![endif]--> 
@@ -31,7 +32,7 @@
           <a href=".." class="icon icon-home"> Legal-10 Benchmark
         </a><div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
-      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
   </form>
 </div>
       </div>
@@ -39,49 +40,42 @@
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption"><span class="caption-text">Home</span></p>
               <ul class="current">
-                  <li class="toctree-l1"><a class="reference internal" href="..">Legal-10 Benchmark</a>
+                  <li class="toctree-l1"><a class="reference internal" href="..">Index</a>
                   </li>
-                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Legal-10 Development Notes</a>
-    <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#dataset-availability-status">Dataset Availability Status</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#available-on-huggingface">✓ Available on HuggingFace</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#available-on-github">⚠ Available on GitHub</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#not-publicly-available">❌ Not Publicly Available</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#existing-helm-implementations">Existing HELM Implementations</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#already-implemented">Already Implemented</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#to-implement-8-datasets">To Implement (8 datasets)</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#implementation-patterns-from-casehold-legalbench">Implementation Patterns (from CaseHOLD &amp; LegalBench)</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#dataset-loading">Dataset Loading</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#instance-structure">Instance Structure</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#run-spec-pattern">Run Spec Pattern</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#computational-estimates">Computational Estimates</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#per-dataset-based-on-caseholdlegalbench">Per-Dataset (based on CaseHOLD/LegalBench)</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#branding-changes-completed">Branding Changes Completed</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#next-steps">Next Steps</a>
-    </li>
-    </ul>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Legal-10 Development Notes</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">ARCHITECTURE</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../architecture_assessment/">HELM Framework Architectural Assessment for Legal-10 Integration</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">SKILLSETS</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../skill_1_research_planning/">Skill 1: Research Planning</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../skill_2_strategic_stopping/">Skill 2: Strategic Stopping</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../skill_3_known_authority/">Skill 3: Known Authority</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../skill_4_unknown_authority/">Skill 4: Unknown Authority</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../skill_5_validate_authority/">Skill 5: Validate Authority</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../skill_6_fact_extraction/">Skill 6: Fact Extraction</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../skill_7_distinguish_cases/">Skill 7: Distinguish Cases</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../skill_8_synthesize_results/">Skill 8: Synthesize Results</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../skill_9_citation_integrity/">Skill 9: Citation Integrity</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../skill_10_copyright_compliance/">Skill 10: Copyright Compliance</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">EXTENSIONS</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../extension_multilingual/">Multilingual</a>
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">User Guide</span></p>
@@ -104,35 +98,14 @@
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../adding_new_scenarios/">Adding New Scenarios</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../adding_new_tokenizers/">Adding New Tokenizers</a>
-                  </li>
                   <li class="toctree-l1"><a class="reference internal" href="../benchmark/">Advanced Benchmarking Guide</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../huggingface_models/">Hugging Face Model Hub Integration</a>
-                  </li>
-              </ul>
-              <p class="caption"><span class="caption-text">Reference</span></p>
-              <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="../models/">Models</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../metrics/">Metrics</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../perturbations/">Perturbations</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../scenarios/">Scenarios</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../schemas/">Schemas</a>
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">Developer Guide</span></p>
               <ul>
                   <li class="toctree-l1"><a class="reference internal" href="../developer_setup/">Developer Setup</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../code/">Code Structure</a>
-                  </li>
                   <li class="toctree-l1"><a class="reference internal" href="../developer_adding_new_models/">Adding New Clients</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../proxy_server/">Proxy Server</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../editing_documentation/">Editing Documentation</a>
                   </li>
@@ -150,9 +123,9 @@
       <div class="wy-nav-content">
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
-          <li class="breadcrumb-item">Home</li>
-      <li class="breadcrumb-item active">Legal-10 Development Notes</li>
+    <li><a href=".." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+          <li>Home &raquo;</li>
+      <li>Legal-10 Development Notes</li>
     <li class="wy-breadcrumbs-aside">
           <a href="https://github.com/prophetto1/legal-10-benchmark/blob/main/docs/notes.md" class="icon icon-github"> Edit on GitHub</a>
     </li>
@@ -255,8 +228,8 @@
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href=".." class="btn btn-neutral float-left" title="Legal-10 Benchmark"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../installation/" class="btn btn-neutral float-right" title="Installation">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href=".." class="btn btn-neutral float-left" title="Index"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../architecture_assessment/" class="btn btn-neutral float-right" title="HELM Framework Architectural Assessment for Legal-10 Integration">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -286,19 +259,18 @@
       <span><a href=".." style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
-      <span><a href="../installation/" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="../architecture_assessment/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
-    <script src="../js/jquery-3.6.0.min.js"></script>
-    <script>var base_url = "..";</script>
-    <script src="../js/theme_extra.js"></script>
-    <script src="../js/theme.js"></script>
-      <script src="../search/main.js"></script>
-    <script>
-        jQuery(function () {
+    <script>var base_url = '..';</script>
+    <script src="../js/theme_extra.js" defer></script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
             SphinxRtdTheme.Navigation.enable(true);
-        });
+        };
     </script>
 
 </body>

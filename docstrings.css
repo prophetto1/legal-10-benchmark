@@ -5,3 +5,61 @@ div.doc-contents:not(.first), div.doc-class > div.doc-contents {
   padding-left: 25px;
   border-left: .05rem solid rgba(200, 200, 200, 0.2);
 }
+
+/* Responsive tables - prevent horizontal scroll */
+table {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  font-size: 0.9em;
+}
+
+table th, table td {
+  white-space: normal;
+  word-wrap: break-word;
+}
+
+/* Adjusted font sizes - apply globally */
+body {
+  font-size: 15px;
+}
+
+h1 {
+  font-size: 2em;
+}
+
+h2 {
+  font-size: 1.5em;
+}
+
+h3 {
+  font-size: 1.2em;
+}
+
+p, li, td, th {
+  font-size: 1em;
+  line-height: 1.6;
+}
+
+code, pre {
+  font-size: 0.9em;
+}
+
+/* Fix left navigation positioning - prevent jumping */
+.wy-nav-side {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  height: 100% !important;
+  overflow-y: auto !important;
+}
+
+.wy-side-scroll {
+  position: relative !important;
+  height: 100% !important;
+}
+
+/* Ensure content area accounts for fixed sidebar */
+.wy-nav-content-wrap {
+  margin-left: 300px !important;
+}
