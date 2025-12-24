@@ -1,4 +1,4 @@
-site_name: Legal-10 Benchmark
+site_name: LEGAL-10 BENCHMARK
 repo_url: https://github.com/prophetto1/legal-10-benchmark/
 edit_uri: blob/main/docs/
 theme:
@@ -34,12 +34,11 @@ extra_css:
 watch:
   - src
 nav:
-  - Home:
-    - index.md
-    - notes.md
-  - ARCHITECTURE:
-    - architecture_assessment.md
-  - SKILLSETS:
+  - ABOUT LEGAL-10:
+    - Legal-10 Benchmark: index.md
+    - Framework: framework.md
+  - LEGAL-10 BENCHMARKS:
+    - introduction.md
     - skill_1_research_planning.md
     - skill_2_strategic_stopping.md
     - skill_3_known_authority.md
@@ -52,18 +51,8 @@ nav:
     - skill_10_copyright_compliance.md
   - EXTENSIONS:
     - extension_multilingual.md
-  - User Guide:
-    - installation.md
-    - quick_start.md
-    - tutorial.md
-    - run_entries_configuration_files.md
-    - run_entries.md
-    - credentials.md
-    - importing_custom_modules.md
-    - adding_new_models.md
-    - adding_new_scenarios.md
-    - benchmark.md
-  - Developer Guide:
-    - developer_setup.md
-    - developer_adding_new_models.md
-    - editing_documentation.md
+  - GUIDES:
+    - user_guide.md
+    - developer_guide.md
+  - L-10 Dev Notes:
+    - notes.md
