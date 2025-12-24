@@ -44,9 +44,6 @@ notes.otl
 .idea
 .vscode
 
-# Editor settings
-.claude
-
 # For vim
 *.swp
 
