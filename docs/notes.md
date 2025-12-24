@@ -1,5 +1,21 @@
 # Legal-10 Development Notes
 
+## MkDocs Documentation Workflow
+
+**Correct workflow for docs changes:**
+1. Edit source files (`docs/`, `mkdocs.yml`, `docstrings.css`)
+2. Restart local server: `python -m mkdocs serve`
+3. Preview at http://127.0.0.1:8000/
+4. Commit and push to `main`
+5. GitHub Action builds and deploys to `gh-pages`
+6. Remote site updates at https://prophetto1.github.io/legal-10-benchmark/
+
+**Important:** Never edit the `site/` folder directly - it's auto-generated and gitignored.
+
+**Hidden pages:** Pages not listed in `mkdocs.yml` nav are still accessible via direct URL (e.g., this page at `/notes/`).
+
+---
+
 ## Dataset Availability Status
 
 ### ✓ Available on HuggingFace
