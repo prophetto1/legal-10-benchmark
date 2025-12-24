@@ -107,6 +107,17 @@
             <div class="section" itemprop="articleBody">
               
                 <h1 id="legal-10-development-notes">Legal-10 Development Notes</h1>
+<h2 id="mkdocs-documentation-workflow">MkDocs Documentation Workflow</h2>
+<p><strong>Correct workflow for docs changes:</strong>
+1. Edit source files (<code>docs/</code>, <code>mkdocs.yml</code>, <code>docstrings.css</code>)
+2. Restart local server: <code>python -m mkdocs serve</code>
+3. Preview at http://127.0.0.1:8000/
+4. Commit and push to <code>main</code>
+5. GitHub Action builds and deploys to <code>gh-pages</code>
+6. Remote site updates at https://prophetto1.github.io/legal-10-benchmark/</p>
+<p><strong>Important:</strong> Never edit the <code>site/</code> folder directly - it's auto-generated and gitignored.</p>
+<p><strong>Hidden pages:</strong> Pages not listed in <code>mkdocs.yml</code> nav are still accessible via direct URL (e.g., this page at <code>/notes/</code>).</p>
+<hr />
 <h2 id="dataset-availability-status">Dataset Availability Status</h2>
 <h3 id="available-on-huggingface">✓ Available on HuggingFace</h3>
 <ul>
