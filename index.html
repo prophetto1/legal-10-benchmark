@@ -132,81 +132,70 @@
 <tr>
 <th>Skill</th>
 <th>Name</th>
-<th>Dataset</th>
-<th>Description</th>
 <th>Modality</th>
+<th>Dataset</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><strong>S1</strong></td>
 <td>Research Planning</td>
+<td>AG</td>
 <td>LegalAgentBench</td>
-<td>Plan and execute multi-step research strategy under budget with clear stop rule</td>
-<td>Agentic Workflows (AG)</td>
 </tr>
 <tr>
 <td><strong>S2</strong></td>
 <td>Strategic Stopping</td>
+<td>AG</td>
 <td>LegalAgentBench</td>
-<td>Terminate research at the right time given diminishing returns and uncertainty</td>
-<td>Agentic Workflows (AG)</td>
 </tr>
 <tr>
 <td><strong>S3</strong></td>
 <td>Known Authority</td>
+<td>RAG</td>
 <td>CLERC</td>
-<td>Resolve a known citation/identifier to the correct authority quickly and exactly</td>
-<td>Retrieval-Augmented Generation (RAG)</td>
 </tr>
 <tr>
 <td><strong>S4</strong></td>
 <td>Unknown Authority</td>
+<td>RAG</td>
 <td>CLERC (semantic)</td>
-<td>Retrieve relevant law from a fact pattern and rank/select the best authority</td>
-<td>Retrieval-Augmented Generation (RAG)</td>
 </tr>
 <tr>
 <td><strong>S5</strong></td>
 <td>Validate Authority</td>
+<td>RAG</td>
 <td>KeyCite-CLERC</td>
-<td>Determine whether authority remains good law and summarize negative treatment</td>
-<td>Retrieval-Augmented Generation (RAG)</td>
 </tr>
 <tr>
 <td><strong>S6</strong></td>
 <td>Fact Extraction</td>
+<td>RAG</td>
 <td>CUAD</td>
-<td>Extract specific facts from long contracts (needle-in-haystack retrieval)</td>
-<td>Retrieval-Augmented Generation (RAG)</td>
 </tr>
 <tr>
 <td><strong>S7</strong></td>
 <td>Distinguish Cases</td>
+<td>CB</td>
 <td>CaseHOLD</td>
-<td>Decide whether a case applies or can be distinguished based on facts/reasoning</td>
-<td>Closed-Book (CB)</td>
 </tr>
 <tr>
 <td><strong>S8</strong></td>
 <td>Synthesize Results</td>
+<td>CB</td>
 <td>LEXam</td>
-<td>Combine multiple authorities into a cohesive principle, memo, or argument</td>
-<td>Closed-Book (CB)</td>
 </tr>
 <tr>
 <td><strong>S9</strong></td>
 <td>Citation Integrity</td>
+<td>CB</td>
 <td>Dahl 10-types</td>
-<td>Avoid fabricated authority; ensure grounding and adverse authority obligations</td>
-<td>Closed-Book (CB)</td>
 </tr>
 <tr>
 <td><strong>S10</strong></td>
 <td>Copyright Compliance</td>
+<td>CB</td>
 <td>SHIELD</td>
-<td>Refuse protected content and minimize verbatim memorization</td>
-<td>Closed-Book (CB)</td>
 </tr>
 </tbody>
 </table>
@@ -216,16 +205,16 @@
 <tr>
 <th>#</th>
 <th>Name</th>
+<th>Modality</th>
 <th>Dataset</th>
-<th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><strong>1</strong></td>
 <td>Multilingual Reasoning</td>
+<td>CB</td>
 <td>FairLex</td>
-<td>Evaluate legal reasoning across jurisdictions/languages; test quantization transparency</td>
 </tr>
 </tbody>
 </table>
