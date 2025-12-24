@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Legal-10 Agentic Benchmark Research - LEGAL-10 BENCHMARK</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link href="../docstrings.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Legal-10 Agentic Benchmark Research";
+        var mkdocs_page_input_path = "agentic_research.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <script src="../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]--> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> LEGAL-10 BENCHMARK
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">ABOUT LEGAL-10</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="..">Legal-10 Benchmark</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../framework/">Framework</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">LEGAL-10 BENCHMARKS</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../introduction/">Introduction</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../skill_1_research_planning/">Skill 1: Research Planning</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../skill_2_strategic_stopping/">Skill 2: Strategic Stopping</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../skill_3_known_authority/">Skill 3: Known Authority</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../skill_4_unknown_authority/">Skill 4: Unknown Authority</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../skill_5_validate_authority/">Skill 5: Validate Authority</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../skill_6_fact_extraction/">Skill 6: Fact Extraction</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../skill_7_distinguish_cases/">Skill 7: Distinguish Cases</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../skill_8_synthesize_results/">Skill 8: Synthesize Results</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../skill_9_citation_integrity/">Skill 9: Citation Integrity</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../skill_10_copyright_compliance/">Skill 10: Copyright Compliance</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">EXTENSIONS</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../extension_multilingual/">Multilingual</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">GUIDES</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../user_guide/">User Guide</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../developer_guide/">Developer Guide</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">LEGAL-10 BENCHMARK</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+      <li>Legal-10 Agentic Benchmark Research</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/prophetto1/legal-10-benchmark/blob/main/docs/agentic_research.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="legal-10-agentic-benchmark-research">Legal-10 Agentic Benchmark Research</h1>
+<p><strong>Internal development notes — not listed in navigation</strong></p>
+<hr />
+<h2 id="overview">Overview</h2>
+<p>This document catalogs research for developing <strong>Legal-10 Agentic</strong> (S1-S2), an English-language legal agent benchmark adapted from LegalAgentBench methodology.</p>
+<hr />
+<h2 id="benchmark-architecture-decision">Benchmark Architecture Decision</h2>
+<h3 id="legal-10-structure">Legal-10 Structure</h3>
+<pre><code>┌─────────────────────────────────────────────────────────┐
+│              LEGAL-10 BENCHMARK                         │
+├─────────────────────────────────────────────────────────┤
+│  CORE (Required) - 8 Skills                             │
+│  ├── CB: S7, S8, S9, S10                                │
+│  └── RAG: S3, S4, S5, S6                                │
+│  → Standard completion + long context                   │
+│  → Single connection: CB first → then RAG               │
+│  → No cross-contamination (stateless per instance)      │
+├─────────────────────────────────────────────────────────┤
+│  AGENTIC (Optional) - 2 Skills                          │
+│  └── AG: S1, S2                                         │
+│  → Requires tool use / function calling                 │
+│  → Separate benchmark run                               │
+└─────────────────────────────────────────────────────────┘
+</code></pre>
+<h3 id="scoring">Scoring</h3>
+<table>
+<thead>
+<tr>
+<th>Model</th>
+<th>Core (8)</th>
+<th>Agentic (2)</th>
+<th>Full (10)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GPT-4</td>
+<td>78%</td>
+<td>70%</td>
+<td>76%</td>
+</tr>
+<tr>
+<td>Claude</td>
+<td>80%</td>
+<td>72%</td>
+<td>78%</td>
+</tr>
+<tr>
+<td>Llama-3</td>
+<td>75%</td>
+<td>N/A</td>
+<td>75%*</td>
+</tr>
+</tbody>
+</table>
+<p>*Models without tool-use get Core score only</p>
+<hr />
+<h2 id="legalagentbench-methodology-reference">LegalAgentBench Methodology (Reference)</h2>
+<p><strong>Paper:</strong> <a href="https://arxiv.org/abs/2412.17259">arxiv.org/abs/2412.17259</a> (ACL 2025)</p>
+<h3 id="framework-components">Framework Components</h3>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>LegalAgentBench (Chinese)</th>
+<th>Legal-10 Agentic (English)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Corpora</td>
+<td>17 (14 tabular + 3 retrieval)</td>
+<td>Adapt from HuggingFace</td>
+</tr>
+<tr>
+<td>Tools</td>
+<td>37 specialized tools</td>
+<td>Build for English legal DBs</td>
+</tr>
+<tr>
+<td>Tasks</td>
+<td>300 annotated</td>
+<td>Combine from HF datasets</td>
+</tr>
+<tr>
+<td>Jurisdiction</td>
+<td>Chinese civil law</td>
+<td>US/UK common law</td>
+</tr>
+</tbody>
+</table>
+<h3 id="task-construction-framework-6-steps">Task Construction Framework (6 Steps)</h3>
+<ol>
+<li><strong>Planning Tree Construction</strong> — Model tool call dependencies as hierarchical tree</li>
+<li><strong>Path Selection</strong> — Extract solution paths from 1-hop to 5-hop complexity</li>
+<li><strong>Entity Selection</strong> — Validate initial entities complete intended paths</li>
+<li><strong>Question Rewriting</strong> — Transform templates into natural language (GPT-4)</li>
+<li><strong>Answer Generation</strong> — Programmatically extract via parameterized tool chains</li>
+<li><strong>Human Verification</strong> — Expert legal professionals validate all Q&amp;A</li>
+</ol>
+<h3 id="task-distribution">Task Distribution</h3>
+<table>
+<thead>
+<tr>
+<th>Complexity</th>
+<th>Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1-hop</td>
+<td>80</td>
+</tr>
+<tr>
+<td>2-hop</td>
+<td>80</td>
+</tr>
+<tr>
+<td>3-hop</td>
+<td>60</td>
+</tr>
+<tr>
+<td>4-hop</td>
+<td>40</td>
+</tr>
+<tr>
+<td>5-hop</td>
+<td>20</td>
+</tr>
+<tr>
+<td>Writing</td>
+<td>20</td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td><strong>300</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="tool-categories">Tool Categories</h3>
+<table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Count</th>
+<th>Function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Text Retrievers</td>
+<td>3</td>
+<td>Embedding-based document search</td>
+</tr>
+<tr>
+<td>Database Tools</td>
+<td>28</td>
+<td>Query structured legal data</td>
+</tr>
+<tr>
+<td>Mathematical Tools</td>
+<td>5</td>
+<td>Arithmetic, sorting, aggregation</td>
+</tr>
+<tr>
+<td>System Tools</td>
+<td>1</td>
+<td>"Finish" tool for final answers</td>
+</tr>
+</tbody>
+</table>
+<h3 id="evaluation-metrics">Evaluation Metrics</h3>
+<ul>
+<li><strong>Success Rate</strong> — Keyword matching for final answers</li>
+<li><strong>Progress Rate</strong> — Intermediate step keywords (key_middle)</li>
+<li><strong>BERT-Score</strong> — Semantic similarity</li>
+</ul>
+<h3 id="key-findings">Key Findings</h3>
+<ul>
+<li>GPT-4o achieved 79.08% success rate (ReAct method)</li>
+<li>Success declined from 93% (1-hop) to 61% (5-hop)</li>
+<li>LLMs struggle with: legal terminology, deep article interpretation, tool argument specification</li>
+</ul>
+<hr />
+<h2 id="huggingface-english-legal-datasets">HuggingFace English Legal Datasets</h2>
+<h3 id="corpus-sources">Corpus Sources</h3>
+<table>
+<thead>
+<tr>
+<th>Dataset</th>
+<th>HuggingFace Link</th>
+<th>Content</th>
+<th>Agentic Use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Caselaw Access Project</strong></td>
+<td><a href="https://huggingface.co/datasets/free-law/Caselaw_Access_Project">free-law/Caselaw_Access_Project</a></td>
+<td>6.7M US court decisions</td>
+<td>Case retrieval corpus</td>
+</tr>
+<tr>
+<td><strong>COLD Cases</strong></td>
+<td><a href="https://huggingface.co/datasets/harvard-lil/cold-cases">harvard-lil/cold-cases</a></td>
+<td>Reformatted CourtListener</td>
+<td>Structured case DB</td>
+</tr>
+<tr>
+<td><strong>Pile of Law</strong></td>
+<td><a href="https://huggingface.co/datasets/pile-of-law/pile-of-law">pile-of-law/pile-of-law</a></td>
+<td>Court opinions, briefs, statutes</td>
+<td>Multi-source legal text</td>
+</tr>
+<tr>
+<td><strong>CLERC</strong></td>
+<td><a href="https://huggingface.co/papers/2406.17186">jhu-clsp/CLERC</a></td>
+<td>1.84M federal cases, 20.7M citations</td>
+<td>Citation retrieval</td>
+</tr>
+<tr>
+<td><strong>CUAD</strong></td>
+<td><a href="https://huggingface.co/datasets/theatricusproject/cuad-qa">theatticusproject/cuad-qa</a></td>
+<td>510 contracts, 41 clause types</td>
+<td>Contract analysis</td>
+</tr>
+<tr>
+<td><strong>LegalBench</strong></td>
+<td><a href="https://huggingface.co/datasets/nguha/legalbench">nguha/legalbench</a></td>
+<td>162 reasoning tasks</td>
+<td>Multi-hop reasoning</td>
+</tr>
+<tr>
+<td><strong>BSARD</strong></td>
+<td><a href="https://huggingface.co/datasets/maastrichtlawtech/bsard">maastrichtlawtech/bsard</a></td>
+<td>Belgian statutes (French)</td>
+<td>Statute retrieval pattern</td>
+</tr>
+<tr>
+<td><strong>FairLex</strong></td>
+<td><a href="https://huggingface.co/datasets/coastalcph/fairlex">coastalcph/fairlex</a></td>
+<td>Swiss/EU court decisions</td>
+<td>Multilingual extension</td>
+</tr>
+<tr>
+<td><strong>HFforLegal Case-law</strong></td>
+<td><a href="https://huggingface.co/datasets/HFforLegal/case-law">HFforLegal/case-law</a></td>
+<td>Multi-country case law</td>
+<td>International cases</td>
+</tr>
+<tr>
+<td><strong>IL-TUR</strong></td>
+<td><a href="https://huggingface.co/datasets/Exploration-Lab/IL-TUR">Exploration-Lab/IL-TUR</a></td>
+<td>Indian statute identification</td>
+<td>Statute lookup pattern</td>
+</tr>
+</tbody>
+</table>
+<h3 id="task-oriented-datasets">Task-Oriented Datasets</h3>
+<table>
+<thead>
+<tr>
+<th>Dataset</th>
+<th>Focus</th>
+<th>Agentic Relevance</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>LawFlow</strong></td>
+<td><a href="https://huggingface.co/papers/2504.18942">Paper</a></td>
+<td>End-to-end lawyer workflows</td>
+</tr>
+<tr>
+<td><strong>LegalBench</strong></td>
+<td><a href="https://huggingface.co/datasets/nguha/legalbench">nguha/legalbench</a></td>
+<td>162 tasks, 6 reasoning types</td>
+</tr>
+<tr>
+<td><strong>CLERC</strong></td>
+<td><a href="https://github.com/abehou/CLERC">GitHub</a></td>
+<td>Citation retrieval + RAG</td>
+</tr>
+<tr>
+<td><strong>Lawyer-Instruct</strong></td>
+<td><a href="https://huggingface.co/datasets/Alignment-Lab-AI/Lawyer-Instruct">Alignment-Lab-AI/Lawyer-Instruct</a></td>
+<td>Legal dialogue (instruction format)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="priority-datasets-for-s1-s2">Priority Datasets for S1-S2</h3>
+<table>
+<thead>
+<tr>
+<th>Priority</th>
+<th>Dataset</th>
+<th>Why</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><strong>LawFlow</strong></td>
+<td>Full lawyer workflow: client interview → research → drafting</td>
+</tr>
+<tr>
+<td>2</td>
+<td><strong>LegalBench</strong></td>
+<td>162 reasoning tasks, chainable into multi-hop</td>
+</tr>
+<tr>
+<td>3</td>
+<td><strong>CLERC</strong></td>
+<td>Citation retrieval + generation for research planning</td>
+</tr>
+<tr>
+<td>4</td>
+<td><strong>Caselaw Access Project</strong></td>
+<td>6.7M cases for retrieval corpus</td>
+</tr>
+<tr>
+<td>5</td>
+<td><strong>CUAD</strong></td>
+<td>Contract analysis for transactional workflows</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="proposed-english-agentic-framework">Proposed English Agentic Framework</h2>
+<pre><code>Legal-10 Agentic (English)
+├── Corpora (adapt from HF)
+│   ├── Caselaw Access Project (case retrieval)
+│   ├── Pile of Law - statutes (statute lookup)
+│   ├── CUAD (contract DB)
+│   └── CLERC passages (citation retrieval)
+├── Tools (build for English legal DBs)
+│   ├── Case search (Westlaw/CourtListener API pattern)
+│   ├── Statute lookup
+│   ├── Citation validator
+│   ├── Contract clause extractor
+│   └── Math/aggregation tools
+├── Tasks (300, adapted from)
+│   ├── LawFlow workflows → multi-hop
+│   ├── LegalBench reasoning → subtasks
+│   └── CLERC retrieval → citation tasks
+└── Evaluation
+    ├── Success rate
+    ├── Progress rate (intermediate keywords)
+    └── BERT-Score
+</code></pre>
+<hr />
+<h2 id="existing-legal-ag-benchmarks-reference">Existing Legal AG Benchmarks (Reference)</h2>
+<h3 id="legalagentbench-acl-2025">LegalAgentBench (ACL 2025)</h3>
+<ul>
+<li><strong>Focus:</strong> LLM Agents in Chinese legal domain</li>
+<li><strong>Dataset:</strong> 17 corpora, 37 tools, 300 tasks</li>
+<li><strong>Paper:</strong> <a href="https://arxiv.org/abs/2412.17259">arxiv.org/abs/2412.17259</a></li>
+<li><strong>GitHub:</strong> <a href="https://github.com/CSHaitao/LegalAgentBench">CSHaitao/LegalAgentBench</a></li>
+</ul>
+<h3 id="legalbench-2023">LegalBench (2023)</h3>
+<ul>
+<li><strong>Focus:</strong> Legal reasoning evaluation (not agentic)</li>
+<li><strong>Tasks:</strong> 162 tasks, 6 reasoning categories</li>
+<li><strong>Paper:</strong> <a href="https://arxiv.org/abs/2308.11462">arxiv.org/abs/2308.11462</a></li>
+<li><strong>GitHub:</strong> <a href="https://github.com/HazyResearch/legalbench">HazyResearch/legalbench</a></li>
+</ul>
+<h3 id="vlair-2025">VLAIR (2025)</h3>
+<ul>
+<li><strong>Focus:</strong> Commercial legal AI tool evaluation</li>
+<li><strong>Tasks:</strong> 7 task types (Document Q&amp;A, Redlining, etc.)</li>
+<li><strong>Source:</strong> <a href="https://www.vals.ai/vlair">vals.ai/vlair</a></li>
+</ul>
+<h3 id="harvey-biglaw-bench-2024">Harvey BigLaw Bench (2024)</h3>
+<ul>
+<li><strong>Focus:</strong> Real BigLaw tasks from billable time entries</li>
+<li><strong>Evaluation:</strong> Rubric penalties for hallucinations, tone, relevance</li>
+<li><strong>Source:</strong> <a href="https://legaltechnology.com/2024/09/03/the-gen-ai-llm-benchmarking-war-starts-here-harvey-releases-new-evaluation-framework/">Legal IT Insider</a></li>
+</ul>
+<hr />
+<h2 id="general-agentic-benchmarks-non-legal-reference">General Agentic Benchmarks (Non-Legal Reference)</h2>
+<table>
+<thead>
+<tr>
+<th>Benchmark</th>
+<th>Focus</th>
+<th>Relevance</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://gorilla.cs.berkeley.edu/leaderboard.html">BFCL</a></td>
+<td>Function calling accuracy</td>
+<td>Tool-use evaluation pattern</td>
+</tr>
+<tr>
+<td><a href="https://github.com/THUDM/AgentBench">AgentBench</a></td>
+<td>LLM-as-agent across 8 environments</td>
+<td>Multi-turn architecture</td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2310.06770">SWE-bench</a></td>
+<td>Real GitHub issue resolution</td>
+<td>Task completion pattern</td>
+</tr>
+<tr>
+<td><a href="https://github.com/livebench/liveswebench">LiveSWEBench</a></td>
+<td>Tiered autonomy levels</td>
+<td>Agentic vs prompted vs autocomplete</td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2410.07331">DA-Code</a></td>
+<td>Data science agent tasks</td>
+<td>Domain-specific agent pattern</td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2410.07095">MLE-Bench</a></td>
+<td>ML engineering (Kaggle)</td>
+<td>Professional task benchmark</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="lawflow-dataset-details">LawFlow Dataset Details</h2>
+<p><strong>Paper:</strong> <a href="https://arxiv.org/abs/2504.18942">arxiv.org/abs/2504.18942</a></p>
+<h3 id="what-it-captures">What It Captures</h3>
+<ul>
+<li>End-to-end legal workflows from trained law students</li>
+<li>Business entity formation scenarios</li>
+<li>Dynamic, modular, iterative reasoning (not linear chains)</li>
+</ul>
+<h3 id="workflow-components">Workflow Components</h3>
+<ol>
+<li>Client information elicitation</li>
+<li>Issue identification</li>
+<li>Note-taking</li>
+<li>Legal research</li>
+<li>Template selection</li>
+<li>Drafting</li>
+</ol>
+<h3 id="key-finding">Key Finding</h3>
+<blockquote>
+<p>Human workflows demonstrate modularity and adaptability. LLM workflows tend toward sequential, exhaustive processing with limited sensitivity to downstream implications.</p>
+</blockquote>
+<h3 id="ai-role-insight">AI Role Insight</h3>
+<blockquote>
+<p>Legal professionals envision AI excelling in supportive capacities: "brainstorming, identifying blind spots, and surfacing alternatives" — not executing entire workflows independently.</p>
+</blockquote>
+<hr />
+<h2 id="next-steps">Next Steps</h2>
+<ol>
+<li>[ ] Download and analyze LawFlow dataset structure</li>
+<li>[ ] Map LegalBench tasks to multi-hop chains</li>
+<li>[ ] Design English tool taxonomy (37 tools equivalent)</li>
+<li>[ ] Identify corpora for each tool category</li>
+<li>[ ] Create task annotation guidelines</li>
+<li>[ ] Recruit legal expert annotators</li>
+</ol>
+<hr />
+<h2 id="references">References</h2>
+<ul>
+<li>Dahl, M., et al. (2024). Large Legal Fictions. <em>Journal of Legal Analysis</em>.</li>
+<li>LegalAgentBench (2025). ACL 2025. <a href="https://arxiv.org/abs/2412.17259">arXiv:2412.17259</a></li>
+<li>LegalBench (2023). <a href="https://arxiv.org/abs/2308.11462">arXiv:2308.11462</a></li>
+<li>LawFlow (2025). <a href="https://arxiv.org/abs/2504.18942">arXiv:2504.18942</a></li>
+<li>CLERC (2025). NAACL 2025. <a href="https://arxiv.org/abs/2406.17186">arXiv:2406.17186</a></li>
+</ul>
+              
+            </div>
+          </div><footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/prophetto1/legal-10-benchmark/" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+    
+  </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme_extra.js" defer></script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
