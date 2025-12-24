@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>HELM Dataset Integration Guide - Legal-10 Benchmark</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link href="../docstrings.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "HELM Dataset Integration Guide";
+        var mkdocs_page_input_path = "dataset_integration_guide.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]--> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Legal-10 Benchmark
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Home</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="..">Legal-10 Benchmark</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../notes/">Legal-10 Development Notes</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../design_principles/">Legal-10 Design Principles</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">ARCHITECTURE</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../architecture_assessment/">HELM Framework Architectural Assessment for Legal-10 Integration</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">HELM Dataset Integration Guide</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">SKILLSETS</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../skill_1_research_planning/">Skill 1: Research Planning</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../skill_2_strategic_stopping/">Skill 2: Strategic Stopping</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../skill_3_known_authority/">Skill 3: Known Authority</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../skill_4_unknown_authority/">Skill 4: Unknown Authority</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../skill_5_validate_authority/">Skill 5: Validate Authority</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../skill_6_fact_extraction/">Skill 6: Fact Extraction</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../skill_7_distinguish_cases/">Skill 7: Distinguish Cases</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../skill_8_synthesize_results/">Skill 8: Synthesize Results</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../skill_9_citation_integrity/">Skill 9: Citation Integrity</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../skill_10_copyright_compliance/">Skill 10: Copyright Compliance</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">EXTENSIONS</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../extension_multilingual/">Multilingual</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">User Guide</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../installation/">Installation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../quick_start/">Quick Start</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tutorial/">Tutorial</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../run_entries_configuration_files/">Run Entries Configuration Files</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../run_entries/">Run Entries</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../credentials/">Credentials</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../importing_custom_modules/">Importing Custom Modules</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../adding_new_models/">Adding New Models</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../adding_new_scenarios/">Adding New Scenarios</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../benchmark/">Advanced Benchmarking Guide</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Developer Guide</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../developer_setup/">Developer Setup</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../developer_adding_new_models/">Adding New Clients</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../editing_documentation/">Editing Documentation</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Legal-10 Benchmark</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">ARCHITECTURE</li>
+      <li class="breadcrumb-item active">HELM Dataset Integration Guide</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/prophetto1/legal-10-benchmark/blob/main/docs/dataset_integration_guide.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="helm-dataset-integration-guide">HELM Dataset Integration Guide</h1>
+<h2 id="overview">Overview</h2>
+<p>This guide catalogs how HELM connects to external datasets and provides patterns for integrating Legal-10 datasets.</p>
+<hr />
+<h2 id="dataset-sources">Dataset Sources</h2>
+<p>HELM supports multiple data source types:</p>
+<table>
+<thead>
+<tr>
+<th>Source Type</th>
+<th>Usage</th>
+<th>Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>HuggingFace Datasets</strong></td>
+<td>Primary method (~90% of scenarios)</td>
+<td>CaseHOLD, LegalBench, LexGLUE</td>
+</tr>
+<tr>
+<td><strong>Direct URLs</strong></td>
+<td>Manual downloads with caching</td>
+<td>Legal Support</td>
+</tr>
+<tr>
+<td><strong>Git Repositories</strong></td>
+<td>Version-controlled data</td>
+<td>LegalBench prompt settings</td>
+</tr>
+<tr>
+<td><strong>Local Files</strong></td>
+<td>Post-download parsing</td>
+<td>JSONL, CSV, TSV files</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="current-legal-datasets-in-helm">Current Legal Datasets in HELM</h2>
+<h3 id="1-casehold-case-holdings-on-legal-decisions">1. CaseHOLD (Case Holdings On Legal Decisions)</h3>
+<p><strong>File:</strong> <code>src/helm/benchmark/scenarios/casehold_scenario.py</code></p>
+<p><strong>Dataset Source:</strong></p>
+<pre><code class="language-python">from datasets import load_dataset
+
+dataset = load_dataset(
+    &quot;casehold/casehold&quot;,  # HuggingFace dataset ID
+    &quot;all&quot;,                 # Configuration/subset
+    cache_dir=data_path   # Local cache: {output_path}/data
+)
+</code></pre>
+<p><strong>HuggingFace:</strong> <a href="https://huggingface.co/datasets/casehold/casehold">casehold/casehold</a></p>
+<p><strong>Data Structure:</strong>
+- <strong>Task:</strong> Multiple choice QA (5 options)
+- <strong>Splits:</strong> <code>train</code>, <code>test</code>
+- <strong>Fields:</strong>
+  - <code>example_id</code> - Unique identifier
+  - <code>citing_prompt</code> - Context passage
+  - <code>holding_0</code> through <code>holding_4</code> - Answer choices
+  - <code>label</code> - Correct answer index ("0"-"4")</p>
+<p><strong>Run Spec:</strong> <code>enterprise_run_specs.py::get_casehold_spec()</code></p>
+<p><strong>Adapter:</strong> Multiple Choice Joint</p>
+<p><strong>Metrics:</strong> Exact Match</p>
+<hr />
+<h3 id="2-legalbench">2. LegalBench</h3>
+<p><strong>File:</strong> <code>src/helm/benchmark/scenarios/legalbench_scenario.py</code></p>
+<p><strong>Dataset Source:</strong></p>
+<pre><code class="language-python">import datasets
+
+train_dataset = datasets.load_dataset(
+    &quot;nguha/legalbench&quot;,
+    subset,  # e.g., &quot;abercrombie&quot;, &quot;corporate_lobbying&quot;
+    trust_remote_code=True,
+    cache_dir=cache_dir,
+    split=&quot;train&quot;,
+    revision=&quot;e042ea68c19df12b737fe768572f22ead61e8e37&quot;  # Pinned version
+)
+</code></pre>
+<p><strong>HuggingFace:</strong> <a href="https://huggingface.co/datasets/nguha/legalbench">nguha/legalbench</a></p>
+<p><strong>Supported Subsets:</strong>
+- <code>abercrombie</code> - Trademark classification
+- <code>corporate_lobbying</code> - Corporate disclosure analysis
+- <code>international_citizenship_questions</code> - Citizenship law QA
+- <code>function_of_decision_section</code> - Legal document structure
+- <code>proa</code> - Legal reasoning</p>
+<p><strong>Additional Resources:</strong></p>
+<pre><code class="language-python"># External prompt configuration
+PROMPT_SETTINGS_URL = &quot;https://raw.githubusercontent.com/HazyResearch/legalbench/main/helm_prompt_settings.jsonl&quot;
+
+ensure_file_downloaded(
+    source_url=PROMPT_SETTINGS_URL,
+    target_path=prompt_settings_path
+)
+</code></pre>
+<p><strong>Run Spec:</strong> <code>lite_run_specs.py::get_legalbench_spec(subset)</code></p>
+<p><strong>Key Feature:</strong> Uses <code>revision</code> parameter for reproducibility</p>
+<hr />
+<h3 id="3-lexglue-legal-general-language-understanding">3. LexGLUE (Legal General Language Understanding)</h3>
+<p><strong>File:</strong> <code>src/helm/benchmark/scenarios/lex_glue_scenario.py</code></p>
+<p><strong>Dataset Source:</strong></p>
+<pre><code class="language-python">dataset = load_dataset(
+    &quot;lex_glue&quot;,
+    config,  # Task config: &quot;ecthr_a&quot;, &quot;scotus&quot;, &quot;case_hold&quot;, etc.
+    cache_dir=cache_dir
+)
+</code></pre>
+<p><strong>HuggingFace:</strong> <a href="https://huggingface.co/datasets/lex_glue">lex_glue</a></p>
+<p><strong>Supported Tasks:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Config</th>
+<th>Task Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ecthr_a</code></td>
+<td>Multi-label</td>
+<td>European Court of Human Rights (Articles)</td>
+</tr>
+<tr>
+<td><code>ecthr_b</code></td>
+<td>Multi-label</td>
+<td>European Court of Human Rights (Violations)</td>
+</tr>
+<tr>
+<td><code>scotus</code></td>
+<td>Single-label</td>
+<td>US Supreme Court topic classification</td>
+</tr>
+<tr>
+<td><code>eurlex</code></td>
+<td>Multi-label</td>
+<td>EU legislation classification</td>
+</tr>
+<tr>
+<td><code>ledgar</code></td>
+<td>Single-label</td>
+<td>Legal contract provisions</td>
+</tr>
+<tr>
+<td><code>unfair_tos</code></td>
+<td>Multi-label</td>
+<td>Terms of Service unfairness detection</td>
+</tr>
+<tr>
+<td><code>case_hold</code></td>
+<td>QA</td>
+<td>Legal case holding identification</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Run Spec:</strong> <code>classic_run_specs.py::get_lex_glue_spec(subset)</code></p>
+<p><strong>Dynamic Configuration:</strong>
+- Task type determines adapter (generation vs classification)
+- Max tokens varies by task (20-100)
+- Max train instances varies (0-5)</p>
+<hr />
+<h3 id="4-legal-summarization-multi-dataset">4. Legal Summarization (Multi-Dataset)</h3>
+<p><strong>File:</strong> <code>src/helm/benchmark/scenarios/legal_summarization_scenario.py</code></p>
+<p><strong>Supports 3 Datasets:</strong></p>
+<h4 id="a-billsum-us-congressional-bills">A. BillSum (US Congressional Bills)</h4>
+<pre><code class="language-python">dataset = load_dataset(&quot;billsum&quot;, cache_dir=cache_dir)
+# Fields: text, summary
+</code></pre>
+<p><strong>HuggingFace:</strong> <a href="https://huggingface.co/datasets/billsum">billsum</a></p>
+<p><strong>Run Spec:</strong> <code>classic_run_specs.py::get_billsum_legal_summarization_spec()</code></p>
+<p><strong>Summary Length:</strong> 200-800 tokens</p>
+<h4 id="b-multilexsum-legal-case-summaries">B. MultiLexSum (Legal Case Summaries)</h4>
+<pre><code class="language-python">dataset = load_dataset(
+    &quot;allenai/multi_lexsum&quot;,
+    &quot;v20220616&quot;,  # Versioned config
+    cache_dir=cache_dir
+)
+# Fields: summary/long, summary/short
+</code></pre>
+<p><strong>HuggingFace:</strong> <a href="https://huggingface.co/datasets/allenai/multi_lexsum">allenai/multi_lexsum</a></p>
+<p><strong>Run Spec:</strong> <code>classic_run_specs.py::get_multilexsum_legal_summarization_spec()</code></p>
+<p><strong>Summary Length:</strong> 100-400 tokens</p>
+<h4 id="c-eurlexsum-eu-legislation">C. EurLexSum (EU Legislation)</h4>
+<pre><code class="language-python">dataset = load_dataset(
+    &quot;dennlinger/eur-lex-sum&quot;,
+    &quot;english&quot;,  # Language config
+    cache_dir=cache_dir
+)
+# Fields: reference, summary
+</code></pre>
+<p><strong>HuggingFace:</strong> <a href="https://huggingface.co/datasets/dennlinger/eur-lex-sum">dennlinger/eur-lex-sum</a></p>
+<p><strong>Run Spec:</strong> <code>classic_run_specs.py::get_eurlexsum_legal_summarization_spec()</code></p>
+<p><strong>Summary Length:</strong> 400-1600 tokens</p>
+<hr />
+<h3 id="5-legal-support-argumentative-reasoning">5. Legal Support (Argumentative Reasoning)</h3>
+<p><strong>File:</strong> <code>src/helm/benchmark/scenarios/legal_support_scenario.py</code></p>
+<p><strong>Dataset Source:</strong> Direct URL Download</p>
+<pre><code class="language-python">from helm.common.general import ensure_file_downloaded
+
+ensure_file_downloaded(
+    source_url=&quot;https://docs.google.com/uc?export=download&amp;id=1PVoyddrCHChMxYrLhsI-zu7Xzs5S8N77&quot;,
+    target_path=data_path,
+    unpack=True,
+    unpack_type=&quot;unzip&quot;
+)
+
+# Reads local JSONL files:
+# - train.jsonl
+# - dev.jsonl
+# - test.jsonl
+</code></pre>
+<p><strong>Data Structure:</strong></p>
+<pre><code class="language-json">{
+  &quot;context&quot;: &quot;Legal passage text...&quot;,
+  &quot;citation_a&quot;: &quot;First citation with (parenthetical text)&quot;,
+  &quot;citation_b&quot;: &quot;Second citation with (parenthetical text)&quot;,
+  &quot;label&quot;: &quot;a&quot;  // or &quot;b&quot;
+}
+</code></pre>
+<p><strong>Run Spec:</strong> <code>classic_run_specs.py::get_legal_support_spec()</code></p>
+<p><strong>Task:</strong> Binary multiple choice (which citation better supports the passage)</p>
+<hr />
+<h3 id="6-lextreme-multilingual-legal-nlu">6. LEXtreme (Multilingual Legal NLU)</h3>
+<p><strong>File:</strong> <code>src/helm/benchmark/scenarios/lextreme_scenario.py</code></p>
+<p><strong>Dataset Source:</strong></p>
+<pre><code class="language-python">dataset = load_dataset(
+    &quot;joelito/lextreme&quot;,
+    subset,  # 18 different legal tasks
+    cache_dir=cache_dir
+)
+</code></pre>
+<p><strong>HuggingFace:</strong> <a href="https://huggingface.co/datasets/joelito/lextreme">joelito/lextreme</a></p>
+<p><strong>18 Legal Tasks</strong> across multiple languages (Portuguese, German, Greek, French, Italian, Romanian)</p>
+<hr />
+<h2 id="standard-dataset-integration-patterns">Standard Dataset Integration Patterns</h2>
+<h3 id="pattern-1-huggingface-datasets-recommended">Pattern 1: HuggingFace Datasets (Recommended)</h3>
+<p><strong>Use When:</strong> Dataset is publicly available on HuggingFace Hub</p>
+<p><strong>Template:</strong></p>
+<pre><code class="language-python">from typing import List
+import os
+from datasets import load_dataset, DatasetDict
+from helm.benchmark.scenarios.scenario import (
+    Scenario, Instance, Input, Output, Reference,
+    TRAIN_SPLIT, TEST_SPLIT, CORRECT_TAG
+)
+from helm.common.general import ensure_directory_exists
+
+class Legal10ExampleScenario(Scenario):
+    name = &quot;legal_10_example&quot;
+    description = &quot;Legal-10 example dataset&quot;
+    tags = [&quot;legal&quot;, &quot;legal_10&quot;]
+
+    def get_instances(self, output_path: str) -&gt; List[Instance]:
+        # Step 1: Set up cache directory
+        cache_dir = os.path.join(output_path, &quot;data&quot;)
+        ensure_directory_exists(cache_dir)
+
+        # Step 2: Load dataset from HuggingFace
+        dataset = load_dataset(
+            &quot;legal-10/example-dataset&quot;,  # HuggingFace dataset ID
+            &quot;default&quot;,                    # Config/subset (optional)
+            cache_dir=cache_dir,
+            revision=&quot;main&quot;               # Or specific commit hash
+        )
+
+        # Step 3: Convert to HELM instances
+        instances = []
+        for split_name in [&quot;train&quot;, &quot;test&quot;]:
+            helm_split = TRAIN_SPLIT if split_name == &quot;train&quot; else TEST_SPLIT
+
+            for idx, example in enumerate(dataset[split_name]):
+                instance = Instance(
+                    input=Input(text=example[&quot;input_text&quot;]),
+                    references=[
+                        Reference(
+                            Output(text=example[&quot;answer&quot;]),
+                            tags=[CORRECT_TAG]
+                        )
+                    ],
+                    split=helm_split,
+                    id=f&quot;{split_name}_{idx}&quot;
+                )
+                instances.append(instance)
+
+        return instances
+</code></pre>
+<p><strong>Advantages:</strong>
+- Automatic caching
+- Version control via <code>revision</code> parameter
+- Standardized interface
+- Easy data exploration on HuggingFace website</p>
+<hr />
+<h3 id="pattern-2-direct-url-download">Pattern 2: Direct URL Download</h3>
+<p><strong>Use When:</strong> Dataset is hosted externally (not on HuggingFace)</p>
+<p><strong>Template:</strong></p>
+<pre><code class="language-python">import json
+from helm.common.general import ensure_file_downloaded
+
+class Legal10URLScenario(Scenario):
+    name = &quot;legal_10_url_example&quot;
+    description = &quot;Dataset from external URL&quot;
+    tags = [&quot;legal&quot;, &quot;legal_10&quot;]
+
+    DATASET_URL = &quot;https://example.com/dataset.zip&quot;
+
+    def get_instances(self, output_path: str) -&gt; List[Instance]:
+        # Step 1: Download and unpack
+        data_path = os.path.join(output_path, &quot;data&quot;)
+        ensure_file_downloaded(
+            source_url=self.DATASET_URL,
+            target_path=data_path,
+            unpack=True,
+            unpack_type=&quot;zip&quot;  # or &quot;tar&quot;, &quot;unzstd&quot;
+        )
+
+        # Step 2: Read local files
+        instances = []
+        with open(os.path.join(data_path, &quot;train.jsonl&quot;)) as f:
+            for line in f:
+                data = json.loads(line)
+                instance = Instance(
+                    input=Input(text=data[&quot;question&quot;]),
+                    references=[
+                        Reference(Output(text=data[&quot;answer&quot;]), tags=[CORRECT_TAG])
+                    ],
+                    split=TRAIN_SPLIT,
+                    id=data[&quot;id&quot;]
+                )
+                instances.append(instance)
+
+        return instances
+</code></pre>
+<p><strong>Advantages:</strong>
+- Works with any HTTP/HTTPS URL
+- Automatic unpacking (zip, tar, tar.gz, zstd)
+- Local file caching</p>
+<hr />
+<h3 id="pattern-3-multiple-choice-with-references">Pattern 3: Multiple Choice with References</h3>
+<p><strong>Use When:</strong> Dataset has multiple answer choices (like CaseHOLD)</p>
+<p><strong>Template:</strong></p>
+<pre><code class="language-python">class Legal10MultipleChoiceScenario(Scenario):
+    name = &quot;legal_10_mcqa&quot;
+    description = &quot;Multiple choice QA&quot;
+    tags = [&quot;legal&quot;, &quot;question_answering&quot;, &quot;legal_10&quot;]
+
+    NUM_CHOICES = 4  # Number of answer options
+
+    def get_instances(self, output_path: str) -&gt; List[Instance]:
+        cache_dir = os.path.join(output_path, &quot;data&quot;)
+        ensure_directory_exists(cache_dir)
+
+        dataset = load_dataset(&quot;legal-10/mcqa&quot;, cache_dir=cache_dir)
+
+        instances = []
+        for example in dataset[&quot;test&quot;]:
+            # Extract answer choices
+            choices = [
+                example[&quot;choice_a&quot;],
+                example[&quot;choice_b&quot;],
+                example[&quot;choice_c&quot;],
+                example[&quot;choice_d&quot;]
+            ]
+            correct_idx = int(example[&quot;label&quot;])  # 0-3
+
+            # Create references (one per choice)
+            references = [
+                Reference(
+                    Output(text=choices[i]),
+                    tags=[CORRECT_TAG] if i == correct_idx else []
+                )
+                for i in range(self.NUM_CHOICES)
+            ]
+
+            instance = Instance(
+                input=Input(text=example[&quot;question&quot;]),
+                references=references,
+                split=TEST_SPLIT,
+                id=example[&quot;id&quot;]
+            )
+            instances.append(instance)
+
+        return instances
+</code></pre>
+<p><strong>Key Points:</strong>
+- One <code>Reference</code> per answer choice
+- Only correct answer has <code>CORRECT_TAG</code>
+- Used with <code>ADAPT_MULTIPLE_CHOICE_JOINT</code> adapter</p>
+<hr />
+<h2 id="cache-directory-structure">Cache Directory Structure</h2>
+<p>HELM uses a consistent caching pattern:</p>
+<pre><code>benchmark_output/
+└── scenarios/
+    └── legal_10_example/
+        ├── data/                    # Dataset cache (HuggingFace or downloaded)
+        │   ├── downloads/          # Raw downloads
+        │   └── legal-10___example/ # Processed HuggingFace cache
+        ├── instances.json          # Generated instances
+        └── scenario_state.json     # Execution results
+</code></pre>
+<p><strong>Key Functions:</strong></p>
+<pre><code class="language-python">from helm.common.general import (
+    ensure_directory_exists,      # Create dir if not exists
+    ensure_file_downloaded,       # Download file with caching
+)
+from helm.benchmark.scenarios.scenario import get_scenario_cache_path
+
+# Get standard cache path
+cache_path = get_scenario_cache_path(benchmark_output_path, &quot;legal_10_example&quot;)
+# Returns: benchmark_output/scenarios/legal_10_example
+</code></pre>
+<hr />
+<h2 id="reproducibility-best-practices">Reproducibility Best Practices</h2>
+<h3 id="1-pin-dataset-versions">1. Pin Dataset Versions</h3>
+<p><strong>HuggingFace:</strong></p>
+<pre><code class="language-python">dataset = load_dataset(
+    &quot;legal-10/dataset&quot;,
+    revision=&quot;abc123def456&quot;  # Specific git commit hash
+)
+</code></pre>
+<p><strong>Direct URLs:</strong></p>
+<pre><code class="language-python"># Include version in filename or URL
+DATASET_URL = &quot;https://example.com/dataset-v1.2.3.zip&quot;
+</code></pre>
+<h3 id="2-document-data-source">2. Document Data Source</h3>
+<pre><code class="language-python">class Legal10Scenario(Scenario):
+    &quot;&quot;&quot;
+    Legal-10 Example Dataset
+
+    Dataset repository: https://huggingface.co/datasets/legal-10/example
+    Publication: Smith et al. (2024). &quot;Legal AI Benchmark.&quot; ICAIL.
+
+    Data content:
+      The dataset consists of X legal questions with Y answer choices.
+      Questions are derived from Z legal domain.
+    &quot;&quot;&quot;
+    name = &quot;legal_10_example&quot;
+</code></pre>
+<h3 id="3-handle-missing-data-gracefully">3. Handle Missing Data Gracefully</h3>
+<pre><code class="language-python">def get_instances(self, output_path: str) -&gt; List[Instance]:
+    try:
+        dataset = load_dataset(&quot;legal-10/dataset&quot;, cache_dir=cache_dir)
+    except Exception as e:
+        raise ValueError(
+            f&quot;Failed to load dataset 'legal-10/dataset'. &quot;
+            f&quot;Ensure you have internet connection and HuggingFace access. Error: {e}&quot;
+        )
+</code></pre>
+<hr />
+<h2 id="legal-10-dataset-requirements">Legal-10 Dataset Requirements</h2>
+<p>For Legal-10 benchmark integration, each skill needs:</p>
+<h3 id="skill-datasets">Skill Datasets</h3>
+<table>
+<thead>
+<tr>
+<th>Skill</th>
+<th>Dataset</th>
+<th>Preferred Source</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>S1-S2</td>
+<td>LegalAgentBench</td>
+<td>HuggingFace or URL</td>
+<td>To be uploaded</td>
+</tr>
+<tr>
+<td>S3-S4</td>
+<td>CLERC</td>
+<td>HuggingFace or URL</td>
+<td>To be uploaded</td>
+</tr>
+<tr>
+<td>S5</td>
+<td>KeyCite-CLERC</td>
+<td>HuggingFace or URL</td>
+<td>To be uploaded</td>
+</tr>
+<tr>
+<td>S6</td>
+<td>CUAD</td>
+<td>HuggingFace: <code>cuad</code></td>
+<td>Available</td>
+</tr>
+<tr>
+<td>S7</td>
+<td>CaseHOLD</td>
+<td>HuggingFace: <code>casehold/casehold</code></td>
+<td>✅ Integrated</td>
+</tr>
+<tr>
+<td>S8</td>
+<td>LEXam</td>
+<td>HuggingFace or URL</td>
+<td>To be uploaded</td>
+</tr>
+<tr>
+<td>S9</td>
+<td>Dahl 10-types</td>
+<td>HuggingFace or URL</td>
+<td>To be uploaded</td>
+</tr>
+<tr>
+<td>S10</td>
+<td>SHIELD</td>
+<td>HuggingFace or URL</td>
+<td>To be uploaded</td>
+</tr>
+</tbody>
+</table>
+<h3 id="dataset-upload-checklist">Dataset Upload Checklist</h3>
+<p>For HuggingFace hosting:</p>
+<ul>
+<li>[ ] Create HuggingFace dataset repository</li>
+<li>[ ] Upload data files (train/test/validation splits)</li>
+<li>[ ] Write dataset card (README.md) with:</li>
+<li>[ ] Description and citation</li>
+<li>[ ] Data structure documentation</li>
+<li>[ ] Field descriptions</li>
+<li>[ ] Licensing information</li>
+<li>[ ] Add dataset loading script (if custom format)</li>
+<li>[ ] Test loading: <code>load_dataset("legal-10/dataset-name")</code></li>
+<li>[ ] Pin revision for reproducibility</li>
+</ul>
+<hr />
+<h2 id="testing-dataset-integration">Testing Dataset Integration</h2>
+<h3 id="1-test-loading">1. Test Loading</h3>
+<pre><code class="language-python"># Test in Python REPL
+from datasets import load_dataset
+
+dataset = load_dataset(&quot;legal-10/example&quot;)
+print(dataset)
+print(dataset[&quot;train&quot;][0])  # First example
+</code></pre>
+<h3 id="2-test-scenario">2. Test Scenario</h3>
+<pre><code class="language-python"># Run scenario in isolation
+from helm.benchmark.scenarios.legal_10_example_scenario import Legal10ExampleScenario
+
+scenario = Legal10ExampleScenario()
+instances = scenario.get_instances(&quot;test_output&quot;)
+print(f&quot;Loaded {len(instances)} instances&quot;)
+print(instances[0])
+</code></pre>
+<h3 id="3-test-run-spec">3. Test Run Spec</h3>
+<pre><code class="language-bash"># Run small evaluation
+helm-run \
+  --run-specs legal_10_example \
+  --max-eval-instances 5 \
+  --output-path test_output
+</code></pre>
+<hr />
+<h2 id="common-issues-solutions">Common Issues &amp; Solutions</h2>
+<h3 id="issue-1-dataset-not-found">Issue 1: Dataset Not Found</h3>
+<p><strong>Error:</strong> <code>FileNotFoundError</code> or <code>DatasetNotFoundError</code></p>
+<p><strong>Solutions:</strong>
+- Verify dataset ID is correct
+- Check HuggingFace dataset is public
+- Ensure internet connection
+- Try with <code>trust_remote_code=True</code> if dataset has custom script</p>
+<h3 id="issue-2-cache-permission-errors">Issue 2: Cache Permission Errors</h3>
+<p><strong>Error:</strong> <code>PermissionError</code> when writing to cache</p>
+<p><strong>Solutions:</strong>
+- Ensure <code>output_path</code> directory is writable
+- Check disk space
+- Use <code>ensure_directory_exists()</code> before writing</p>
+<h3 id="issue-3-version-mismatch">Issue 3: Version Mismatch</h3>
+<p><strong>Error:</strong> Dataset structure changed from expected format</p>
+<p><strong>Solutions:</strong>
+- Pin <code>revision</code> parameter to specific commit
+- Document expected dataset version in scenario docstring
+- Add validation in <code>get_instances()</code></p>
+<hr />
+<h2 id="summary">Summary</h2>
+<p>HELM's dataset integration follows a <strong>consistent, modular pattern</strong>:</p>
+<ol>
+<li><strong>Scenarios load data</strong> in <code>get_instances()</code> method</li>
+<li><strong>HuggingFace is preferred</strong> for standardization and caching</li>
+<li><strong>Direct URLs work</strong> for externally hosted datasets</li>
+<li><strong>Caching is automatic</strong> in <code>{output_path}/data/</code> directory</li>
+<li><strong>Reproducibility</strong> via <code>revision</code> pinning and version documentation</li>
+</ol>
+<p>For Legal-10:
+- Upload datasets to HuggingFace under <code>legal-10/</code> organization
+- Follow existing legal scenario patterns (CaseHOLD, LegalBench)
+- Use <code>revision</code> parameter for all datasets
+- Document data sources and citations clearly</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../architecture_assessment/" class="btn btn-neutral float-left" title="HELM Framework Architectural Assessment for Legal-10 Integration"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../skill_1_research_planning/" class="btn btn-neutral float-right" title="Skill 1: Research Planning">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/prophetto1/legal-10-benchmark/" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../architecture_assessment/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../skill_1_research_planning/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

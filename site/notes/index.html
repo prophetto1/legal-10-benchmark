@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Legal-10 Development Notes - Legal-10 Benchmark</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link href="../docstrings.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Legal-10 Development Notes";
+        var mkdocs_page_input_path = "notes.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]--> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Legal-10 Benchmark
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Home</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="..">Legal-10 Benchmark</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Legal-10 Development Notes</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">SKILLSETS</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../skill_1_research_planning/">Skill 1: Research Planning</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../skill_2_strategic_stopping/">Skill 2: Strategic Stopping</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../skill_3_known_authority/">Skill 3: Known Authority</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../skill_4_unknown_authority/">Skill 4: Unknown Authority</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../skill_5_validate_authority/">Skill 5: Validate Authority</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../skill_6_fact_extraction/">Skill 6: Fact Extraction</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../skill_7_distinguish_cases/">Skill 7: Distinguish Cases</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../skill_8_synthesize_results/">Skill 8: Synthesize Results</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../skill_9_citation_integrity/">Skill 9: Citation Integrity</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../skill_10_copyright_compliance/">Skill 10: Copyright Compliance</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">EXTENSIONS</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../extension_multilingual/">Multilingual</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">User Guide</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../installation/">Installation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../quick_start/">Quick Start</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tutorial/">Tutorial</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../run_entries_configuration_files/">Run Entries Configuration Files</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../run_entries/">Run Entries</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../credentials/">Credentials</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../importing_custom_modules/">Importing Custom Modules</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../adding_new_models/">Adding New Models</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../adding_new_scenarios/">Adding New Scenarios</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../benchmark/">Advanced Benchmarking Guide</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Developer Guide</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../developer_setup/">Developer Setup</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../architecture_assessment/">HELM Framework Architectural Assessment for Legal-10 Integration</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../developer_adding_new_models/">Adding New Clients</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../editing_documentation/">Editing Documentation</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Legal-10 Benchmark</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Home</li>
+      <li class="breadcrumb-item active">Legal-10 Development Notes</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/prophetto1/legal-10-benchmark/blob/main/docs/notes.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="legal-10-development-notes">Legal-10 Development Notes</h1>
+<h2 id="dataset-availability-status">Dataset Availability Status</h2>
+<h3 id="available-on-huggingface">✓ Available on HuggingFace</h3>
+<ul>
+<li><strong>CUAD</strong> - <a href="https://huggingface.co/datasets/theatticusproject/cuad-qa">theatticusproject/cuad-qa</a> (S6: Fact Extraction)</li>
+<li><strong>CLERC</strong> - <a href="https://huggingface.co/datasets/jhu-clsp/CLERC">jhu-clsp/CLERC</a> (S3, S4, S5: Citation/Authority tasks)</li>
+<li><strong>LEXam</strong> - <a href="https://huggingface.co/datasets/LEXam-Benchmark/LEXam">LEXam-Benchmark/LEXam</a> (S8: Synthesize Results)</li>
+<li><strong>FairLex</strong> - <a href="https://huggingface.co/datasets/coastalcph/fairlex">coastalcph/fairlex</a> (Extension: Multilingual)</li>
+<li><strong>CaseHOLD</strong> - <a href="https://huggingface.co/datasets/casehold/casehold">casehold/casehold</a> (S7: Distinguish Cases) - Already in HELM</li>
+</ul>
+<h3 id="available-on-github">⚠ Available on GitHub</h3>
+<ul>
+<li><strong>Dahl</strong> - <a href="https://github.com/reglab/legal_hallucinations">reglab/legal_hallucinations</a> (S9: Citation Integrity)</li>
+<li><strong>LegalAgentBench</strong> - <a href="https://github.com/CSHaitao/LegalAgentBench">CSHaitao/LegalAgentBench</a> (S1, S2: Agentic) - Chinese-focused</li>
+</ul>
+<h3 id="not-publicly-available">❌ Not Publicly Available</h3>
+<ul>
+<li><strong>SHIELD</strong> - Dataset not public due to copyright concerns (S10: Copyright Compliance)</li>
+<li>Paper: <a href="https://arxiv.org/abs/2406.12975">arXiv:2406.12975</a></li>
+</ul>
+<h2 id="existing-helm-implementations">Existing HELM Implementations</h2>
+<h3 id="already-implemented">Already Implemented</h3>
+<ul>
+<li><strong>CaseHOLD</strong> - <code>src/helm/benchmark/scenarios/casehold_scenario.py</code></li>
+<li>~53k questions, 5-choice MC</li>
+<li>
+<p>Run spec: <code>enterprise_run_specs.py::get_casehold_spec()</code></p>
+</li>
+<li>
+<p><strong>LegalBench</strong> - <code>src/helm/benchmark/scenarios/legalbench_scenario.py</code></p>
+</li>
+<li>~100 instances per subset (5 subsets)</li>
+<li>Run spec: <code>lite_run_specs.py::get_legalbench_spec(subset)</code></li>
+</ul>
+<h3 id="to-implement-8-datasets">To Implement (8 datasets)</h3>
+<ol>
+<li>CLERC (S3, S4, S5)</li>
+<li>CUAD (S6)</li>
+<li>LEXam (S8)</li>
+<li>LegalAgentBench (S1, S2)</li>
+<li>KeyCite (S5) - unclear if separate or part of CLERC</li>
+<li>SHIELD (S10)</li>
+<li>Dahl (S9)</li>
+<li>FairLex (Extension)</li>
+</ol>
+<h2 id="implementation-patterns-from-casehold-legalbench">Implementation Patterns (from CaseHOLD &amp; LegalBench)</h2>
+<h3 id="dataset-loading">Dataset Loading</h3>
+<ul>
+<li>Use HuggingFace <code>load_dataset()</code> with <code>cache_dir</code> parameter</li>
+<li>Cache to <code>output_path/data/</code></li>
+<li>Support train/test splits</li>
+</ul>
+<h3 id="instance-structure">Instance Structure</h3>
+<pre><code class="language-python">Instance(
+    input=Input(text=&quot;...&quot;),
+    references=[Reference(Output(text=&quot;...&quot;), tags=[&quot;correct&quot; or []])],
+    split=&quot;train&quot; or &quot;test&quot;,
+    id=f&quot;id{unique_id}&quot;
+)
+</code></pre>
+<h3 id="run-spec-pattern">Run Spec Pattern</h3>
+<ul>
+<li>Few-shot: 2-5 examples</li>
+<li>Metrics: <code>get_exact_match_metric_specs()</code></li>
+<li>Adapt methods: <code>ADAPT_MULTIPLE_CHOICE_JOINT</code> or <code>ADAPT_GENERATION</code></li>
+</ul>
+<h2 id="computational-estimates">Computational Estimates</h2>
+<h3 id="per-dataset-based-on-caseholdlegalbench">Per-Dataset (based on CaseHOLD/LegalBench)</h3>
+<ul>
+<li><strong>CaseHOLD</strong>: ~1200-1850 tokens/instance, 2 few-shot examples</li>
+<li><strong>LegalBench</strong>: ~650-1250 tokens/instance, 5 few-shot examples</li>
+<li><strong>Estimated runtime</strong>: 30-60 min for 1 model across all 10 skills (~1000-1500 test instances)</li>
+</ul>
+<h2 id="branding-changes-completed">Branding Changes Completed</h2>
+<ul>
+<li>[x] README.md updated with Legal-10 mission statement</li>
+<li>[x] CITATION.bib updated (author: Jon Chung)</li>
+<li>[ ] pyproject.toml (package name, description, author)</li>
+<li>[ ] LICENSE (copyright holder)</li>
+<li>[ ] Frontend branding</li>
+</ul>
+<h2 id="next-steps">Next Steps</h2>
+<ol>
+<li>Decide on test set sampling strategy (all datasets vary in size)</li>
+<li>Create <code>legal10_run_specs.py</code> for all 10 skills</li>
+<li>Implement missing scenario files</li>
+<li>Handle SHIELD alternative (S10)</li>
+<li>Handle LegalAgentBench language issue (S1, S2)</li>
+</ol>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href=".." class="btn btn-neutral float-left" title="Legal-10 Benchmark"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../skill_1_research_planning/" class="btn btn-neutral float-right" title="Skill 1: Research Planning">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/prophetto1/legal-10-benchmark/" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href=".." style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../skill_1_research_planning/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

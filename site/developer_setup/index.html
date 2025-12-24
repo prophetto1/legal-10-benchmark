@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Developer Setup - Legal-10 Benchmark</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link href="../docstrings.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Developer Setup";
+        var mkdocs_page_input_path = "developer_setup.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]--> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Legal-10 Benchmark
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Home</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="..">Legal-10 Benchmark</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../notes/">Legal-10 Development Notes</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">SKILLSETS</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../skill_1_research_planning/">Skill 1: Research Planning</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../skill_2_strategic_stopping/">Skill 2: Strategic Stopping</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../skill_3_known_authority/">Skill 3: Known Authority</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../skill_4_unknown_authority/">Skill 4: Unknown Authority</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../skill_5_validate_authority/">Skill 5: Validate Authority</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../skill_6_fact_extraction/">Skill 6: Fact Extraction</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../skill_7_distinguish_cases/">Skill 7: Distinguish Cases</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../skill_8_synthesize_results/">Skill 8: Synthesize Results</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../skill_9_citation_integrity/">Skill 9: Citation Integrity</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../skill_10_copyright_compliance/">Skill 10: Copyright Compliance</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">EXTENSIONS</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../extension_multilingual/">Multilingual</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">User Guide</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../installation/">Installation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../quick_start/">Quick Start</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tutorial/">Tutorial</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../run_entries_configuration_files/">Run Entries Configuration Files</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../run_entries/">Run Entries</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../credentials/">Credentials</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../importing_custom_modules/">Importing Custom Modules</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../adding_new_models/">Adding New Models</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../adding_new_scenarios/">Adding New Scenarios</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../benchmark/">Advanced Benchmarking Guide</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Developer Guide</span></p>
+              <ul class="current">
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Developer Setup</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../architecture_assessment/">HELM Framework Architectural Assessment for Legal-10 Integration</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../developer_adding_new_models/">Adding New Clients</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../editing_documentation/">Editing Documentation</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Legal-10 Benchmark</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Developer Guide</li>
+      <li class="breadcrumb-item active">Developer Setup</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/prophetto1/legal-10-benchmark/blob/main/docs/developer_setup.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="developer-setup">Developer Setup</h1>
+<h2 id="check-your-system-python-version">Check your system Python version</h2>
+<p>Check your system verison of Python by running:</p>
+<pre><code class="language-bash">python --version
+</code></pre>
+<p>If your version of Python is older than 3.10, you <em>must</em> use either <strong>Conda</strong> or <strong>pyenv</strong> to install a version of Python &gt;=3.10 when setting up your virtual environment.</p>
+<h2 id="set-up-the-python-virtual-environment">Set up the Python virtual environment</h2>
+<p>First, create a Python virtual environment with Python version &gt;= 3.10 and activate it.</p>
+<p>Using <a href="https://docs.python.org/3/library/venv.html#creating-virtual-environments"><strong>Virtualenv</strong></a> (<em>requires</em> system Python version &gt;=3.10):</p>
+<pre><code class="language-bash"># Create a virtual environment.
+# Only run this the first time.
+python3 -m pip install virtualenv
+python3 -m virtualenv -p python3 venv
+
+# Activate the virtual environment.
+# Run this every time you open your shell.
+source venv/bin/activate
+</code></pre>
+<p>Using <a href="https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html"><strong>Conda</strong></a>:</p>
+<pre><code class="language-bash"># Create a virtual environment.
+# Only run this the first time.
+conda create -n crfm-helm python=3.10 pip
+
+# Activate the virtual environment.
+# Run this every time you open your shell.
+conda activate crfm-helm
+</code></pre>
+<p>Using <a href="https://github.com/pyenv/pyenv"><strong>pyenv</strong></a> and <a href="https://github.com/pyenv/pyenv-virtualenv"><strong>pyenv-virtualenv</strong></a>:</p>
+<pre><code class="language-bash"># Create a virtual environment.
+# Only run this the first time.
+pyenv virtualenv 3.10 crfm-helm
+
+# Activate the virtual environment.
+# Run this every time you open your shell.
+pyenv activate crfm-helm
+</code></pre>
+<h2 id="install-python-dependencies">Install Python dependencies</h2>
+<p>To install any dependencies:</p>
+<pre><code class="language-bash">pip install --force-reinstall -e .[dev]
+</code></pre>
+<h2 id="run-python-tests">Run Python tests</h2>
+<p>Currently, running all the unit tests takes about 10 minutes. To run all unit tests:</p>
+<pre><code class="language-bash">python -m pytest
+</code></pre>
+<p>Append <code>-vv</code> to output the full diff and results:</p>
+<pre><code class="language-bash">python -m pytest -vv
+</code></pre>
+<p>When modifying the Python code, you usually want to only run certain relevant tests. To run a specific test file, specify the file path as follows:</p>
+<pre><code class="language-bash">python -m pytest path/to/test_file.py -vv
+</code></pre>
+<h2 id="run-linter-and-type-checker">Run linter and type-checker</h2>
+<p>You should always ensure that your code is linted and type-checked before creating a pull request. This is typically enforced by our git pre-commit hooks. Install the pre-commit hooks by running:</p>
+<pre><code class="language-bash">pre-commit install
+</code></pre>
+<p>This will automatically run the linter and type-checker whenever you run <code>git push</code> to push a branch. To skip running the linter and type checker when pushing a branch, use the <code>--no-verify</code> flag with <code>git push</code>.</p>
+<p>To run the linter and type-checker manually:</p>
+<pre><code class="language-bash">./pre-commit.sh
+</code></pre>
+<p>Alternatively, you can run only the linter or only the type checker separately:</p>
+<pre><code class="language-bash"># Linters
+black src scripts
+flake8 src scripts
+
+# Type checker
+mypy src scripts
+</code></pre>
+<h2 id="executing-helm-commands-with-local-modifications">Executing helm commands with local modifications</h2>
+<p>The recommended way to execute <code>helm-run</code>, <code>helm-summarize</code>, <code>helm-server</code>, etc, with your local version of the repository is to do an editable install, using the following steps:</p>
+<ol>
+<li>Activate your virtual environment.</li>
+<li>Change directory to the repository root (contains pyproject.toml).</li>
+<li>Make sure you don't have an existing helm installation for that environment with <code>pip uninstall crfm-helm</code></li>
+<li>Run <code>pip install -e .</code></li>
+</ol>
+<p>Now calling <code>helm-run</code> while the environment is activated will read from your local source.</p>
+<h3 id="without-installing">Without installing</h3>
+<p>If you have a compelling reason not to do an editable install, you can execute commands by:</p>
+<ol>
+<li>Change directory to <code>src</code></li>
+<li>Execute the module you want with a command like: <code>python -m helm.benchmark.run</code></li>
+</ol>
+<h2 id="checking-in-code">Checking in code</h2>
+<p>The HELM repository does not allow direct modifications of the main branch. Instead, developers create a Pull Request which must then be approved by a different person before merging into main. Here is an example workflow:</p>
+<ol>
+<li><code>git checkout main</code> to start from the main branch.</li>
+<li><code>git pull origin main</code> to get up to date.</li>
+<li>Make whatever changes you'll like to group into a single review.</li>
+<li>Run tests.</li>
+<li>Make a new branch with <code>git checkout -b &lt;your-handle&gt;/&lt;change-identifier</code>. For example, <code>yifanmai/fix-optional-suggestions</code>.</li>
+<li>If you did NOT install the precommit, run the linter and type checker with <code>./pre-commit.sh</code></li>
+<li><code>git commit -a</code> to commit all you changes. If you want to ignore precommit warnings,  you can add <code>--no-verify</code>.</li>
+<li><code>git push origin &lt;your-handle&gt;/&lt;change-identifier&gt;</code> to upload to github.</li>
+<li>Loading any HELM github page should now prompt you about creating a new pull request. If not, you can also find your branch on <a href="https://github.com/stanford-crfm/helm/branches">the branches page</a> to create one.</li>
+<li>Update the title and description as necessary, then create the pull request.</li>
+<li>Once the reviewer is satisfied, they can approve and either of you can then <code>Squash and Merge</code> the branch into main.</li>
+</ol>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../benchmark/" class="btn btn-neutral float-left" title="Advanced Benchmarking Guide"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../architecture_assessment/" class="btn btn-neutral float-right" title="HELM Framework Architectural Assessment for Legal-10 Integration">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/prophetto1/legal-10-benchmark/" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../benchmark/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../architecture_assessment/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

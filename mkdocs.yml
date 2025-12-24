@@ -31,14 +31,27 @@ plugins:
 #   - docs/mkdocs_hooks.py
 extra_css:
   - docstrings.css
-markdown_extensions:
-  - pymdownx.magiclink
 watch:
   - src
 nav:
   - Home:
     - index.md
     - notes.md
+  - ARCHITECTURE:
+    - architecture_assessment.md
+  - SKILLSETS:
+    - skill_1_research_planning.md
+    - skill_2_strategic_stopping.md
+    - skill_3_known_authority.md
+    - skill_4_unknown_authority.md
+    - skill_5_validate_authority.md
+    - skill_6_fact_extraction.md
+    - skill_7_distinguish_cases.md
+    - skill_8_synthesize_results.md
+    - skill_9_citation_integrity.md
+    - skill_10_copyright_compliance.md
+  - EXTENSIONS:
+    - extension_multilingual.md
   - User Guide:
     - installation.md
     - quick_start.md
@@ -49,18 +62,8 @@ nav:
     - importing_custom_modules.md
     - adding_new_models.md
     - adding_new_scenarios.md
-    - adding_new_tokenizers.md
     - benchmark.md
-    - huggingface_models.md
-  - Reference:
-    - models.md
-    - metrics.md
-    - perturbations.md
-    - scenarios.md
-    - schemas.md
   - Developer Guide:
     - developer_setup.md
-    - code.md
     - developer_adding_new_models.md
-    - proxy_server.md
     - editing_documentation.md

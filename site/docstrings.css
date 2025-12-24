@@ -44,22 +44,3 @@ p, li, td, th {
 code, pre {
   font-size: 0.9em;
 }
-
-/* Fix left navigation positioning - prevent jumping */
-.wy-nav-side {
-  position: fixed !important;
-  top: 0 !important;
-  left: 0 !important;
-  height: 100% !important;
-  overflow-y: auto !important;
-}
-
-.wy-side-scroll {
-  position: relative !important;
-  height: 100% !important;
-}
-
-/* Ensure content area accounts for fixed sidebar */
-.wy-nav-content-wrap {
-  margin-left: 300px !important;
-}
