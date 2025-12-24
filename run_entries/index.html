@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Run Entries - Legal-10 Benchmark</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link href="../docstrings.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Run Entries";
+        var mkdocs_page_input_path = "run_entries.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]--> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Legal-10 Benchmark
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Home</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="..">Legal-10 Benchmark</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../notes/">Legal-10 Development Notes</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">User Guide</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../installation/">Installation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../quick_start/">Quick Start</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tutorial/">Tutorial</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../run_entries_configuration_files/">Run Entries Configuration Files</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Run Entries</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#using-run-entries">Using run entries</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#constructing-run-entires">Constructing run entires</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#specifying-the-run-spec-function-name">Specifying the run spec function name</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#run-entry-arguments">Run entry arguments</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#run-spec-function-arguments">Run spec function arguments</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#run-expanders">Run expanders</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#run-entry-naming">Run entry naming</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#run-entries-and-runspecs">Run entries and RunSpecs</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#the-model-run-expander">The model run expander</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../credentials/">Credentials</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../importing_custom_modules/">Importing Custom Modules</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../adding_new_models/">Adding New Models</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../adding_new_scenarios/">Adding New Scenarios</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../adding_new_tokenizers/">Adding New Tokenizers</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../benchmark/">Advanced Benchmarking Guide</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../huggingface_models/">Hugging Face Model Hub Integration</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Reference</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../models/">Models</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../metrics/">Metrics</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../perturbations/">Perturbations</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../scenarios/">Scenarios</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../schemas/">Schemas</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Developer Guide</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../developer_setup/">Developer Setup</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../code/">Code Structure</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../developer_adding_new_models/">Adding New Clients</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../proxy_server/">Proxy Server</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../editing_documentation/">Editing Documentation</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Legal-10 Benchmark</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">User Guide</li>
+      <li class="breadcrumb-item active">Run Entries</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/prophetto1/legal-10-benchmark/blob/main/docs/run_entries.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="run-entries">Run Entries</h1>
+<h2 id="using-run-entries">Using run entries</h2>
+<p>Run entries are the main way of specifying to <code>helm-run</code> which evaluation runs to execute. For instance, in order to evaluate GPT-2 on MedQA, we would pass the following run entry to <code>helm-run</code>:</p>
+<pre><code>med_qa:model=openai/gpt2
+</code></pre>
+<p>There are two ways of passing the run entry to <code>helm-run</code>. We can use the <code>--run-entries</code> flag. For example:</p>
+<pre><code>helm-run --run-entries med_qa:model=openai/gpt2 --suite my-suite --max-eval-instances 10
+</code></pre>
+<p>Alternatively, we can put the run entry into a <code>run_entries.conf</code> file, and the pass that file to <code>helm-run</code> using the <code>--conf-file</code> flag. The <code>run_entries.conf</code> file is a <strong>run entry configuration file</strong> that conforms to the format documented <a href="../run_entries_configuration_files/">here</a>. For example:</p>
+<pre><code>helm-run --conf-file run_entries.conf --suite my-suite --max-eval-instances 10
+</code></pre>
+<h2 id="constructing-run-entires">Constructing run entires</h2>
+<h3 id="specifying-the-run-spec-function-name">Specifying the run spec function name</h3>
+<p>The first part of the run entry before the <code>:</code> is the run spec function name. For example, in the run entry <code>med_qa:model=openai/gpt2</code>, the run spec function name is <code>med_qa</code>.</p>
+<p>A catalog of all run spec function names will be added to the documentation in the future. For now, the best way to find the run spec function name is to look through functions decorated with the <code>@run_spec_function()</code> in the Python modules <code>helm.benchmark.run_specs.*_run_specs</code>. The run spec function name is the decorator's parameter e.g. <code>@run_spec_function("med_qa")</code> indicates a run spec function name of <code>med_qa</code>.</p>
+<p>Note: the run spec function name is frequently the same as the scenario name by convention, but this is not always the case. For instance, the <code>openbookqa</code> scenario has a run spec function that is named <code>commonsense</code>.</p>
+<h3 id="run-entry-arguments">Run entry arguments</h3>
+<p>The second part of the run entry after the <code>:</code> is a mapping of argument names to argument values. The string has the format <code>arg_name_1=arg_value_1,arg_name_2=arg_value_2</code> i.e. the name and value of each argument is joined by <code>=</code>, and the argument name-value pairs are joined by <code>,</code>. All argument values must be non-empty strings.</p>
+<p>The run entry arguments are used for two different things: run spec function arguments, and run expanders. For instance, in the example run entry <code>mmlu:subject=anatomy,model=openai/gpt2</code>, a run spec function argument is specified by <code>subject=anatomy</code>, and a run expander is specified by <code>model=openai/gpt2</code>.</p>
+<p>As in the above example, you can mix run expanders and run spec function arguments in a single run entry. If there is a name conflict between a run expander name and a run spec function argument name, the run expander has precedence. </p>
+<h3 id="run-spec-function-arguments">Run spec function arguments</h3>
+<p>Some run spec functions take in arguments. For instance, the MMLU run spec function <code>get_mmlu_spec()</code> takes in a <code>subject</code> argument. MMLU is a question answering scenario that covers multiple academic subjects. The <code>subject</code> argument specifies that the question set corresponding to that academic subject should be used for that evaluation run. For instance, to evaluate MMLU with the anatomy subject on GPT-2, the run entry should be:</p>
+<p><code>mmlu:subject=anatomy,model=openai/gpt2</code></p>
+<p>A catalog of all run spec functions' parameters will be added to the documentation in the future. For now, the best way to find the run spec function parameters would be to inspect the function definition in the Python modules <code>helm.benchmark.run_specs.*_run_specs</code> for the run spec function in question.</p>
+<h3 id="run-expanders">Run expanders</h3>
+<p>Run expanders are functions that modify how evaluation runs work. Concretely, a run expander operates on a configuration of an evaluation run (a <code>RunSpec</code>) and produces zero, one or multiple evaluation runs configurations with modified configurations (<code>RunSpecs</code>).</p>
+<p>Run expanders are an advanced topic. For most use cases, the only run expander that you will need to use is the <code>model</code> run expander. The <code>model=openai/gpt2</code> argument pair in the run entry indicates that the evaluation run should use the <code>openai/gpt2</code> model. More explanation may be added to the documentation in the future.</p>
+<h3 id="run-entry-naming">Run entry naming</h3>
+<p>The first part of the run entry name is usually be the name of the scenario by convention, but this may not always be the case. For instance, the run entry <code>commonsense:dataset=openbookqa,model=openai/gpt2</code> uses the <code>openbookqa</code> scenario.</p>
+<p>The first part of the run entry name is usually be the name of the run spec function name by convention, but this may not always be the case. For instance, the run entry <code>disinformation:type=wedging,model=openai/gpt2</code> results in the <code>RunSpec</code> name <code>disinfo:type=wedging,model=openai_gpt2</code>.</p>
+<h3 id="run-entries-and-runspecs">Run entries and <code>RunSpec</code>s</h3>
+<p>You may have noticed that some run entries can produce multiple evaluation runs. Concretely, single run entry can produce multiple <code>RunSpec</code>s, and each <code>RunSpec</code> specifies a single evaluation run.</p>
+<p>This is because run expanders are functions that take in a <code>RunSpec</code> and can produce multiple <code>RunSpec</code>. As explained previously, the <code>model</code> run expander is an example of this.</p>
+<h3 id="the-model-run-expander">The <code>model</code> run expander</h3>
+<p>The <code>model</code> run expander is the most commonly used run expander. As discussed earlier, it can be used to set the model for each run entry.</p>
+<p>The <code>model</code> run expander also supports <strong>wildcard values</strong>. For instance, the <code>med_qa:model=text</code> run entry will run the <code>med_qa</code> scenario on <em>every</em> text model that <code>helm-run</code> can find in its configuration files. The wildcard is intended to be used in conjuction with the <code>--models-to-run</code>, which controls which models will actually be evaluated. For example, <code>helm-run --run-entries med_qa:model=text --models-to-run openai/gpt2 openai/gpt-3.5-turbo-613</code> will run <code>med_qa</code> on <em>only</em> <code>openai/gpt2</code> and <code>openai/gpt-3.5-turbo-613</code>.</p>
+<p>Wildcard values for the <code>model</code> run expander are common used in <strong>run entries configuration files</strong> which will are discussed <a href="../run_entries_configuration_files/">here</a>.</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../run_entries_configuration_files/" class="btn btn-neutral float-left" title="Run Entries Configuration Files"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../credentials/" class="btn btn-neutral float-right" title="Credentials">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/prophetto1/legal-10-benchmark/" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../run_entries_configuration_files/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../credentials/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

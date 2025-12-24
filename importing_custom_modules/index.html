@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Importing Custom Modules - Legal-10 Benchmark</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link href="../docstrings.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Importing Custom Modules";
+        var mkdocs_page_input_path = "importing_custom_modules.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]--> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Legal-10 Benchmark
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Home</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="..">Legal-10 Benchmark</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../notes/">Legal-10 Development Notes</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">User Guide</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../installation/">Installation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../quick_start/">Quick Start</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tutorial/">Tutorial</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../run_entries_configuration_files/">Run Entries Configuration Files</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../run_entries/">Run Entries</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../credentials/">Credentials</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Importing Custom Modules</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#add-the-current-working-directory-to-pythonpath">Add the current working directory to PYTHONPATH</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#put-your-custom-classes-in-a-python-package">Put your custom classes in a Python package</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#write-a-python-wrapper-script">Write a Python wrapper script</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../adding_new_models/">Adding New Models</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../adding_new_scenarios/">Adding New Scenarios</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../adding_new_tokenizers/">Adding New Tokenizers</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../benchmark/">Advanced Benchmarking Guide</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../huggingface_models/">Hugging Face Model Hub Integration</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Reference</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../models/">Models</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../metrics/">Metrics</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../perturbations/">Perturbations</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../scenarios/">Scenarios</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../schemas/">Schemas</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Developer Guide</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../developer_setup/">Developer Setup</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../code/">Code Structure</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../developer_adding_new_models/">Adding New Clients</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../proxy_server/">Proxy Server</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../editing_documentation/">Editing Documentation</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Legal-10 Benchmark</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">User Guide</li>
+      <li class="breadcrumb-item active">Importing Custom Modules</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/prophetto1/legal-10-benchmark/blob/main/docs/importing_custom_modules.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="importing-custom-modules">Importing Custom Modules</h1>
+<p>HELM is a modular framework with a plug-in architecture. You can write your own implementation for a client, tokenizer, scenario or metric and use them in HELM with HELM installed as a library, without needing to modify HELM itself.</p>
+<p>The main way for you to use your code in HELM is to write a custom Python class that is a subclass of <code>Client</code>, <code>Tokenizer</code>, <code>Scenario</code> or <code>Metric</code> in a Python module. You can then specify a <code>ClientSpec</code>, <code>TokenizerSpec</code>, <code>ScenarioSpec</code> or <code>MetricSpec</code> (which are all classes of <code>ObjectSpec</code>) where the <code>class_name</code> is the name of your custom Python class.</p>
+<p>However, HELM will only be able to use custom classes that can be imported by Python. Depending on your setup, you may need to do additional steps.</p>
+<h2 id="add-the-current-working-directory-to-pythonpath">Add the current working directory to PYTHONPATH</h2>
+<p>If the custom classes live in a Python module under the current working directory, you should modify <code>PYTHONPATH</code> to make that Python module importable.</p>
+<p>This is required because Python does not add the current working directory to the Python module search path running when using command line comments / Python entry points such as <code>helm-run</code>. See <a href="https://docs.python.org/3/library/sys_path_init.html">Python's documentation</a> for more details.</p>
+<p>For example, suppose you implemented a custom <code>Client</code> subclass named <code>MyClient</code> in the <code>my_client.py</code> file under your current working directory, and you have a <code>ClientSpec</code> specifying the <code>class_name</code> as <code>my_client.MyClient</code>.</p>
+<p>To make your file importable by Python, you have to add <code>.</code> to your <code>PYTHONPATH</code> so that Python will search in your current working directory for your custom Python modules.</p>
+<p>In Bash, you can do this by running <code>export PYTHONPATH=".:$PYTHONPATH"</code> before running <code>helm-run</code>, or by prefixing <code>helm-run</code> with <code>PYTHONPATH=".:$PYTHONPATH</code>.</p>
+<h2 id="put-your-custom-classes-in-a-python-package">Put your custom classes in a Python package</h2>
+<p>If your custom classes are located in a Python package, you can simply install your package (optionally in editable mode) and it will automatically be importable by Python. Be sure to install your Python package in the same Python environment as HELM.</p>
+<h2 id="write-a-python-wrapper-script">Write a Python wrapper script</h2>
+<p>If you are using a Python wrapper script that calls <code>helm.benchmark.run.run_benchmark()</code> instead of using <code>helm-run</code>, Python will automatically add the directory containing that script to the Python module search path. If your custom classes live in a Python module under that directory, they will automatically be importable by Python. See <a href="https://docs.python.org/3/library/sys_path_init.html">Python's documentation</a> for more details.</p>
+<p>For example, suppose you implemented a custom <code>Client</code> subclass named <code>MyClient</code> in the <code>my_client.py</code> file under your current working directory, and you have a <code>ClientSpec</code> specifying the <code>class_name</code> as <code>my_client.MyClient</code>. Suppose you added a script called <code>run_helm.py</code> that calls <code>helm.benchmark.run.run_benchmark()</code> directly. When run using <code>python run_helm.py</code>, HELM will be able to import your modules without any additional changes.</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../credentials/" class="btn btn-neutral float-left" title="Credentials"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../adding_new_models/" class="btn btn-neutral float-right" title="Adding New Models">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/prophetto1/legal-10-benchmark/" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../credentials/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../adding_new_models/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

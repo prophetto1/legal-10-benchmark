@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Code Structure - Legal-10 Benchmark</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link href="../docstrings.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Code Structure";
+        var mkdocs_page_input_path = "code.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]--> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Legal-10 Benchmark
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Home</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="..">Legal-10 Benchmark</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../notes/">Legal-10 Development Notes</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">User Guide</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../installation/">Installation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../quick_start/">Quick Start</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tutorial/">Tutorial</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../run_entries_configuration_files/">Run Entries Configuration Files</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../run_entries/">Run Entries</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../credentials/">Credentials</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../importing_custom_modules/">Importing Custom Modules</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../adding_new_models/">Adding New Models</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../adding_new_scenarios/">Adding New Scenarios</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../adding_new_tokenizers/">Adding New Tokenizers</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../benchmark/">Advanced Benchmarking Guide</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../huggingface_models/">Hugging Face Model Hub Integration</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Reference</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../models/">Models</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../metrics/">Metrics</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../perturbations/">Perturbations</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../scenarios/">Scenarios</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../schemas/">Schemas</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Developer Guide</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../developer_setup/">Developer Setup</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Code Structure</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#birds-eye-view">Birds-Eye View</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#adding-new-scenarios">Adding new scenarios</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#adding-new-metrics">Adding new metrics</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#data-augmentations">Data augmentations</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#adding-a-new-perturbation">Adding a new perturbation</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#supporting-new-hugging-face-tokenizers">Supporting new Hugging Face tokenizers</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#heim-text-to-image-evaluation">HEIM (text-to-image evaluation)</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../developer_adding_new_models/">Adding New Clients</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../proxy_server/">Proxy Server</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../editing_documentation/">Editing Documentation</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Legal-10 Benchmark</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Developer Guide</li>
+      <li class="breadcrumb-item active">Code Structure</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/prophetto1/legal-10-benchmark/blob/main/docs/code.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="code-structure">Code Structure</h1>
+<p><strong>Warning</strong> &mdash; The document is stale and was last modified more than ten months ago. The information below may be outdated and incorrect. Please proceed with caution!</p>
+<h2 id="birds-eye-view">Birds-Eye View</h2>
+<p>Here's a birds-eye view of how the benchmarking process interacts with the main
+classes (see <code>benchmark</code>):</p>
+<ul>
+<li>
+<p>A <code>Scenario</code> (given by a <code>ScenarioSpec</code>) specifies a task and a data
+  distribution.  It specifies a set of <code>Instance</code>s, where each <code>Instance</code> has
+  an input (e.g., question) and a set of <code>Reference</code> outputs (e.g., multiple
+  choice answers).</p>
+</li>
+<li>
+<p>A <code>DataPreprocessor</code> takes in a <code>Scenario</code> and produces a list of <code>Instance</code>s.
+  Each <code>Instance</code> is given a unique ID. The set of <code>Instance</code>s is augmented
+  according to <code>DataAugmenterSpec</code>.</p>
+</li>
+<li>
+<p>An <code>Adapter</code> (given by an <code>AdaptationSpec</code>) takes a list of <code>Instance</code>s and
+  adapts it to a set of <code>Request</code>s to the API (e.g., the model, temperature,
+  number of in-context training examples).  Formally, the output
+  is a <code>ScenarioState</code> containing a set of <code>RequestState</code>s, where each
+  <code>RequestState</code> consists of a <code>Request</code> and any metadata used to track the
+  role of this <code>Request</code> (e.g., the relevant <code>Instance</code> and <code>Reference</code>).</p>
+</li>
+<li>
+<p>An <code>Executor</code> (given by an <code>ExecutionSpec</code>) executes each <code>Request</code> in the
+  <code>RequestState</code> to produce a <code>RequestResult</code> for each one; everything is
+  encapsulated in a <code>ScenarioState</code>.</p>
+</li>
+<li>
+<p>A <code>Metric</code> (given by a <code>MetricSpec</code>) takes a <code>ScenarioState</code> containing
+  <code>RequestResults</code>s and produces a set of <code>Stat</code>s (e.g., accuracy, accuracy@5,
+  toxicity, bias, etc.).</p>
+</li>
+<li>
+<p>A <code>Runner</code> is the top-level controller that runs the above steps and is
+  driven by a set of <code>RunSpec</code>s.</p>
+</li>
+</ul>
+<p>There are three types of classes:</p>
+<ul>
+<li>Specifications (e.g., <code>AdapterSpec</code>, <code>ExecutionSpec</code>, <code>RunSpec</code>):
+  specified manually by the user.  Note that <code>Scenario</code> and <code>Metric</code> are
+  subclassed, so they are constructed by <code>ObjectSpec</code>, which specifies the
+  subclass name and a free-form dictionary of arguments.</li>
+<li>States (e.g., <code>Instance</code>, <code>ScenarioState</code>, <code>Request</code>, <code>RequestResult</code>): these
+  are automatically generated and can be serialized.</li>
+<li>Controllers (e.g., <code>Scenario</code>, <code>Adapter</code>, <code>Executor</code>, <code>Metric</code>, <code>Runner</code>):
+  these have the bulk of the code and should not be serialized.</li>
+</ul>
+<h2 id="adding-new-scenarios">Adding new scenarios</h2>
+<p>In order to implement new scenarios:</p>
+<ol>
+<li>Create a new Python file in the <code>scenarios</code> folder.</li>
+<li>Within the scenario file, create a <code>Scenario</code> class, e.g. <code>YourScenario</code>.</li>
+<li><code>YourScenario</code> should implement <code>get_instances</code>, a method that downloads the 
+   dataset files if they don't already exist and returns a list of <code>Instance</code>s. 
+   Each <code>Instance</code> must have a list of (potentially one)
+   <code>Reference</code> answers: a correct answer may be indicated with a <code>CORRECT_TAG</code> in 
+   a <code>Reference</code> instance's <code>tags</code> argument. In addition, you 
+   must specify the <code>split</code> of the <code>Instance</code> as one of <code>TRAIN_SPLIT</code>,
+   <code>VALID_SPLIT</code>, or <code>TEST_SPLIT</code> constants as in <code>scenario.py</code>.</li>
+<li>For <code>Scenario</code>s with datasets that cannot be publicly shared, place a copy of the
+      dataset at path <code>restricted/&lt;Name of the Scenario&gt;</code> and read from that path.
+      See <code>NewsQAScenario</code> and <code>ICEScenario</code> for some examples.</li>
+<li>Note that you need not enumerate every possible correct answer (nor must
+   there even necessarily be a correct answer). </li>
+<li>Make sure to document your scenario well with a clear docstring. </li>
+<li>In addition, specify its <code>name</code>, <code>description</code>, and <code>tags</code>.</li>
+<li>Identify the appropriate metric for your task in one of the <code>*_metrics.py</code> files.
+   If the metric you'd like to use does not exist, follow the directions in <a href="#adding-new-metrics">Adding new metrics</a>.
+   Many will be in <code>basic_metrics.py</code>.</li>
+<li>Define a function in <code>run_specs.py</code> annotated with <code>run_spec_function</code> to:</li>
+<li>Construct a <code>ScenarioSpec</code> 
+   for your scenario using a class name corresponding to the Python path of 
+   the class (e.g. <code>helm.benchmark.scenarios.your_scenario.YourScenario</code>) and any 
+   arguments which must be passed as a dictionary of <code>args</code>.</li>
+<li>Construct an <code>AdapterSpec</code> for your
+   scenario specifying the type of language model generation which must be 
+   performed for the task.</li>
+<li>Construct one or more <code>MetricSpec</code>
+   objects for your task, specifying the classname with the Python path of
+   the object, with the same arguments as the <code>ScenarioSpec</code> constructor.</li>
+<li>Construct and return <code>RunSpec</code> object, with a 
+   <code>name</code> corresponding to the scenario name and any patterns to match in 
+   curly braces, a <code>scenario_spec</code>, an <code>adapter_spec</code>, <code>metric_specs</code>, 
+   and <code>groups</code>. </li>
+<li>Attempt to run your task with
+   <code>venv/bin/helm-run -r yourscenarioname:arg=value</code> where 
+   <code>yourscenarioname</code> matches the <code>name</code> specified in YourScenario</li>
+<li>Update <code>src/helm/benchmark/static/contamination.yaml</code> with models that were trained on your scenario (i.e. contaminated).</li>
+<li>Add a schema to <code>src/helm/benchmark/static/schema.yaml</code> and add the scenario to <code>subgroups</code> as needed.</li>
+</ol>
+<h2 id="adding-new-metrics">Adding new metrics</h2>
+<p>To add a new metric, first determine if your metric is generic and likely to be widely used, or specific to your task.</p>
+<ul>
+<li>For generic metrics:</li>
+<li>Add a method to <code>basic_metrics.py</code> which takes two arguments: the <code>gold</code> answer and the model's <code>pred</code>iction.</li>
+<li>Add your method to the <code>metric_fn_mapping</code> lookup.</li>
+<li>For task specific metrics:</li>
+<li>Create a new <code>yourtask_metrics.py</code> file for class <code>YourTaskMetric</code> 
+   which inherits from <code>Metric</code> in <code>metric.py</code>.</li>
+<li>Define methods <code>__init__</code> and <code>evaluate_generation</code> returning a list of <code>Stat</code> objects.</li>
+</ul>
+<p>Your metric is responsible for producing <code>Stat</code> objects:</p>
+<ul>
+<li>Each <code>Stat</code> should correspond to a distinct aggregate measurement over the generated examples. 
+   Some may have one metric (e.g. accuracy), while others may quantify multiple aspects
+   (e.g. multiple distance metrics). </li>
+<li>For each <code>value</code> generated for a <code>Stat</code>, add it to <code>yourstat</code> using <code>yourstat.add(value)</code>. 
+   Usually, there will only be one value for each <code>Stat</code>, but multiple can be used, e.g. to show variance.</li>
+</ul>
+<h2 id="data-augmentations">Data augmentations</h2>
+<p>To apply data augmentation, create a <code>DataAugmenterSpec</code> with a list of
+<code>PerturbationSpec</code>s and pass it into <code>RunSpec</code>. The following is an
+example:</p>
+<pre><code class="language-python">    data_augmenter_spec = DataAugmenterSpec(
+        perturbation_specs=[
+            PerturbationSpec(
+                class_name=&quot;helm.benchmark.augmentations.perturbation.ExtraSpacePerturbation&quot;,
+                args={&quot;num_spaces&quot;: 5},
+            )
+        ],
+        should_perturb_references=False,
+        should_augment_train_instances=False,
+        should_include_original_train=False,
+        should_augment_eval_instances=True,
+        should_include_original_eval=True,
+    )
+    run_spec = RunSpec(
+        ...
+        data_augmenter_spec=data_augmenter_spec
+    )
+</code></pre>
+<p>In the example above, the <code>DataPreprocessor</code> will augment the set of evaluation instances by perturbing
+the original set of instances with the <code>ExtraSpacePerturbation</code>, where spaces in the text are
+replaced with <code>num_spaces</code> number of spaces.</p>
+<p>We currently only support applying a single perturbation to an instance instead of chaining
+multiple perturbations and applying it onto a single instance.</p>
+<h3 id="adding-a-new-perturbation">Adding a new perturbation</h3>
+<ol>
+<li>To add a new perturbation to the framework, create a new file at <code>src/helm/benchmark/augmentations</code> with the name
+   <code>&lt;Name of perturbation&gt;_perturbation.py</code> e.g., <code>typo_perturbation.py</code>. Inside the file, create a new class
+   (name it <code>&lt;Name of the perturbation&gt;Perturbation</code> e.g., <code>TypoPerturbation</code>)
+   that extends the abstract class <code>Perturbation</code> and implement the <code>perturb</code> method which
+   takes in text and outputs the perturbed text.</li>
+<li>Add a test for the new perturbation in <code>test_perturbation.py</code>.</li>
+</ol>
+<h2 id="supporting-new-hugging-face-tokenizers">Supporting new Hugging Face tokenizers</h2>
+<ol>
+<li>Give the tokenizer a name. Use the same name that's used in Hugging Face (e.g., "EleutherAI/gpt-j-6B").</li>
+<li>In <code>HuggingFaceTokenizers</code>, we load and cache tokenizers in memory. Add logic to handle
+   the tokenizer in the <code>load_tokenizer</code> method.</li>
+<li>Add a test in <code>test_huggingface_tokenizer.py</code> to make sure we can load the tokenizer from Hugging Face.</li>
+<li>Add a new class <code>&lt;Name of tokenizer&gt;WindowService</code> in file <code>&lt;Name of tokenizer&gt;_window_service.py</code>.
+   Follow what we did for <code>GPTJWindowService</code>.</li>
+<li>Import the new <code>WindowService</code> and map the model(s) to it in <code>WindowServiceFactory</code>.</li>
+</ol>
+<h2 id="heim-text-to-image-evaluation">HEIM (text-to-image evaluation)</h2>
+<p>The overall code structure is the same as HELM's.</p>
+<p>When adding new scenarios and metrics for image generation, place the Python files under the <code>image_generation</code> package 
+(e.g., <code>src/helm/benchmark/scenarios/image_generation</code>).</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../developer_setup/" class="btn btn-neutral float-left" title="Developer Setup"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../developer_adding_new_models/" class="btn btn-neutral float-right" title="Adding New Clients">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/prophetto1/legal-10-benchmark/" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../developer_setup/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../developer_adding_new_models/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
