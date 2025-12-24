@@ -35,8 +35,11 @@ watch:
   - src
 nav:
   - ABOUT LEGAL-10:
-    - Legal-10 Benchmark: index.md
-    - Framework: framework.md
+    - Legal-10: index.md
+    - Mission Statement: mission_statement.md
+    - Standards: standards.md
+    - Why Legal-10: why_legal_10.md
+    - Evaluation Architecture: framework.md
   - LEGAL-10 BENCHMARKS:
     - introduction.md
     - skill_1_research_planning.md
@@ -51,6 +54,9 @@ nav:
     - skill_10_copyright_compliance.md
   - EXTENSIONS:
     - extension_multilingual.md
+  - CONTRIBUTE:
+    - Who We Need: who_we_need.md
+    - Good First Issues: good_first_issues.md
   - GUIDES:
     - user_guide.md
     - developer_guide.md
