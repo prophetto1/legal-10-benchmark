@@ -6,7 +6,7 @@ Legal AI is already being used to make decisions that affect liberty, employment
 
 Legal-10 is an open, skill-based benchmark suite designed to make legal AI performance inspectable, comparable, and auditable—across three delivery modalities: Closed-Book (CB), Retrieval-Augmented Generation (RAG), and Agentic Workflows (AG).
 
-We open-source everything: datasets, harness, scoring, and operational tooling. We support evaluation of both open-weight and closed API models via a reproducible run-bundle protocol.
+We open-source everything: datasets, harness, scoring, and operational tooling. The only exception is the actual administered test data, which remains private to prevent contamination and prior knowledge. We support evaluation of both open-weight and closed API models via a reproducible run-bundle protocol.
 
 ## Key Principle
 
