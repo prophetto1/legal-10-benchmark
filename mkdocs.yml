@@ -1,5 +1,5 @@
-site_name: CRFM HELM
-repo_url: https://github.com/stanford-crfm/helm/
+site_name: Legal-10 Benchmark
+repo_url: https://github.com/prophetto1/legal-10-benchmark/
 edit_uri: blob/main/docs/
 theme:
   name: readthedocs
