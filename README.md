@@ -1,105 +1,190 @@
-# Holistic Evaluation of Language Models (HELM)
+# Legal-10 Benchmark
 
-[comment]: <> (When using the img tag, which allows us to specify size, src has to be a URL.)
-<img src="https://github.com/stanford-crfm/helm/raw/v0.5.4/helm-frontend/src/assets/helm-logo.png" alt="HELM logo"  width="480"/>
+## Introduction
 
-<a href="https://github.com/stanford-crfm/helm">
-    <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/stanford-crfm/helm">
-</a>
-<a href="https://github.com/stanford-crfm/helm/graphs/contributors">
-    <img alt="GitHub contributors" src="https://img.shields.io/github/contributors/stanford-crfm/helm">
-</a>
-<a href="https://github.com/stanford-crfm/helm/actions/workflows/test.yml?query=branch%3Amain">
-    <img alt="GitHub Actions Workflow Status" src="https://img.shields.io/github/actions/workflow/status/stanford-crfm/helm/test.yml">
-</a>
-<a href="https://crfm-helm.readthedocs.io/en/latest/">
-    <img alt="Documentation Status" src="https://readthedocs.org/projects/helm/badge/?version=latest">
-</a>
-<a href="https://github.com/stanford-crfm/helm/blob/main/LICENSE">
-    <img alt="License" src="https://img.shields.io/github/license/stanford-crfm/helm?color=blue" />
-</a>
-<a href="https://pypi.org/project/crfm-helm/">
-    <img alt="PyPI" src="https://img.shields.io/pypi/v/crfm-helm?color=blue" />
-</a>
+Legal AI is already being used to make decisions that affect liberty, employment, housing, immigration status, family stability, and access to counsel. Today's evaluation ecosystem is fragmented, vendor-permissioned, and often optimized for optics rather than end-user protection.
 
-**Holistic Evaluation of Language Models (HELM)** is an open source Python framework created by the [Center for Research on Foundation Models (CRFM) at Stanford](https://crfm.stanford.edu/) for holistic, reproducible and transparent evaluation of foundation models, including large language models (LLMs) and multimodal models. This framework includes the following features:
+Legal-10 is an open, skill-based benchmark suite designed to make legal AI performance inspectable, comparable, and auditable—across three delivery modalities: Closed-Book (CB), Retrieval-Augmented Generation (RAG), and Agentic Workflows (AG).
 
-- Datasets and benchmarks in a standardized format (e.g. MMLU-Pro, GPQA, IFEval, WildBench)
-- Models from various providers accessible through a unified interface (e.g. OpenAI models, Anthropic Claude, Google Gemini)
-- Metrics for measuring various aspects beyond accuracy (e.g. efficiency, bias, toxicity)
-- Web UI for inspecting individual prompts and responses
-- Web leaderboard for comparing results across models and benchmarks
+We open-source everything: datasets, harness, scoring, and operational tooling. We support evaluation of both open-weight and closed API models via a reproducible run-bundle protocol.
 
-## Documentation
+## Key Principle
 
-Please refer to [the documentation on Read the Docs](https://crfm-helm.readthedocs.io/) for instructions on how to install and run HELM.
+**Grounded in Professional Standards.** Legal skills are not one task.
 
-## Quick Start
+- MacCrate Report (ABA, 1992) — foundational lawyering skills
+- AALL Principles & Standards (2013) — legal research competency standards
+- Shultz & Zedeck (2011) — empirically-derived lawyer effectiveness factors
 
-<!--quick-start-begin-->
+Every skill maps to reputable frameworks the legal profession has validated over 30+ years. These standards are used to translate human-lawyer competencies into 10 minimal viable tests across distinct cognitive circuits.
 
-Install the package from PyPI:
+Testing conducted using three modalities of Agentic Workflow (AG), RAG, or Closed Book (CB). Each skill is tested in the modality that most closely matches how human lawyers perform that skill in computer-mediated work.
 
-```sh
-pip install crfm-helm
-```
+## The 10 Skills
 
-Run the following in your shell:
+| Skill | Name | Dataset | Description | Modality |
+|-------|------|---------|-------------|----------|
+| **S1** | Research Planning | LegalAgentBench | Plan and execute multi-step research strategy under budget with clear stop rule | Agentic Workflows (AG) |
+| **S2** | Strategic Stopping | LegalAgentBench | Terminate research at the right time given diminishing returns and uncertainty | Agentic Workflows (AG) |
+| **S3** | Known Authority | CLERC | Resolve a known citation/identifier to the correct authority quickly and exactly | Retrieval-Augmented Generation (RAG) |
+| **S4** | Unknown Authority | CLERC (semantic) | Retrieve relevant law from a fact pattern and rank/select the best authority | Retrieval-Augmented Generation (RAG) |
+| **S5** | Validate Authority | KeyCite-CLERC | Determine whether authority remains good law and summarize negative treatment | Retrieval-Augmented Generation (RAG) |
+| **S6** | Fact Extraction | CUAD | Extract specific facts from long contracts (needle-in-haystack retrieval) | Retrieval-Augmented Generation (RAG) |
+| **S7** | Distinguish Cases | CaseHOLD | Decide whether a case applies or can be distinguished based on facts/reasoning | Closed-Book (CB) |
+| **S8** | Synthesize Results | LEXam | Combine multiple authorities into a cohesive principle, memo, or argument | Closed-Book (CB) |
+| **S9** | Citation Integrity | Dahl 10-types | Avoid fabricated authority; ensure grounding and adverse authority obligations | Closed-Book (CB) |
+| **S10** | Copyright Compliance | SHIELD | Refuse protected content and minimize verbatim memorization | Closed-Book (CB) |
 
-```sh
-# Run benchmark
-helm-run --run-entries mmlu:subject=philosophy,model=openai/gpt2 --suite my-suite --max-eval-instances 10
+### Extensions
 
-# Summarize benchmark results
-helm-summarize --suite my-suite
+| # | Name | Dataset | Description |
+|---|------|---------|-------------|
+| **1** | Multilingual Reasoning | FairLex | Evaluate legal reasoning across jurisdictions/languages; test quantization transparency |
 
-# Start a web server to display benchmark results
-helm-server --suite my-suite
-```
+## Design Principles
 
-Then go to http://localhost:8000/ in your browser.
+### Objectivity
+- Fixed spec per version — changes bump the version
+- No selective omission or quiet withdrawal — full eval split or no score
 
-<!--quick-start-end-->
+### Transparency
+- Open-source harness — datasets, scoring, tools
+- Auditable run bundles — SHA-256 hashes, signed manifests
+- Public append-only log — all submissions preserved
 
-## Leaderboards
+### Fairness
+- Comparable baselines — open and closed models use identical harness
+- Modality-matched testing — CB vs RAG vs AG reflects real lawyer workflows
 
-We maintain offical leaderboards with results from evaluating recent models on notable benchmarks using this framework. Our current flagship leaderboards are:
+### Gaming-Resistant
+- No selective omission → must run all 10 skills
+- Skill-level reporting → can't hide weak skills in aggregate
+- Visible failure modes → can't hide how it failed
 
-- [HELM Capabilities](https://crfm.stanford.edu/helm/capabilities/latest/)
-- [HELM Safety](https://crfm.stanford.edu/helm/safety/latest/)
-- [Holistic Evaluation of Vision-Language Models (VHELM)](https://crfm.stanford.edu/helm/vhelm/latest/)
+## Scoreboard Policy
 
-We also maintain leaderboards for a diverse range of domains (e.g. medicine, finance) and aspects (e.g. multi-linguality, world knowledge, regulation compliance). Refer to the [HELM website](https://crfm.stanford.edu/helm/) for a full list of leaderboards.
+Participation is your choice. We will:
 
-## Papers
+1. List all evaluated systems with linked run bundles ("Evaluated")
+2. Maintain a neutral "Not Yet Evaluated" coverage list
 
-The HELM framework was used in the following papers for evaluating models.
+**Coverage disclosure.** Each "Not Yet Evaluated" entry includes a neutral status tag (e.g., "no public endpoint," "access restricted," "awaiting community submission").
 
-- **Holistic Evaluation of Language Models** - [paper](https://openreview.net/forum?id=iO4LZibEqW), [leaderboard](https://crfm.stanford.edu/helm/classic/latest/)
-- **Holistic Evaluation of Vision-Language Models (VHELM)** - [paper](https://arxiv.org/abs/2410.07112), [leaderboard](https://crfm.stanford.edu/helm/vhelm/latest/), [documentation](https://crfm-helm.readthedocs.io/en/latest/vhelm/)
-- **Holistic Evaluation of Text-To-Image Models (HEIM)** - [paper](https://arxiv.org/abs/2311.04287), [leaderboard](https://crfm.stanford.edu/helm/heim/latest/), [documentation](https://crfm-helm.readthedocs.io/en/latest/heim/)
-- **Image2Struct: Benchmarking Structure Extraction for Vision-Language Models** - [paper](https://arxiv.org/abs/2410.22456)
-- **Enterprise Benchmarks for Large Language Model Evaluation** - [paper](https://arxiv.org/abs/2410.12857), [documentation](https://crfm-helm.readthedocs.io/en/latest/enterprise_benchmark/)
-- **The Mighty ToRR: A Benchmark for Table Reasoning and Robustness** - [paper](https://arxiv.org/abs/2502.19412), [leaderboard](https://crfm.stanford.edu/helm/torr/latest/)
-- **Reliable and Efficient Amortized Model-based Evaluation** - [paper](https://arxiv.org/abs/2503.13335), [documentation](https://crfm-helm.readthedocs.io/en/latest/reeval/)
-- **MedHELM** - paper in progress, [leaderboard](https://crfm.stanford.edu/helm/medhelm/latest/), [documentation](https://crfm-helm.readthedocs.io/en/latest/reeval/)
-- **Holistic Evaluation of Audio-Language Models** - [paper](https://arxiv.org/abs/2508.21376), [leaderboard](https://crfm.stanford.edu/helm/audio/latest/)
+This ensures: Fair comparison across GPT-4, Claude, Llama, and other models using identical evaluation protocols.
 
-The HELM framework can be used to reproduce the published model evaluation results from these papers. To get started, refer to the documentation links above for the corresponding paper, or the [main Reproducing Leaderboards documentation](https://crfm-helm.readthedocs.io/en/latest/reproducing_leaderboards/).
+## Development Architecture - HELM
 
-## Citation
+Legal-10 uses Stanford CRFM's Holistic Evaluation of Language Models (HELM) framework because it embodies many of the values we strive to establish moving forward:
 
-If you use this software in your research, please cite the [Holistic Evaluation of Language Models paper](https://openreview.net/forum?id=iO4LZibEqW) as below.
+- Unified model interface — open-weight + closed API
+- Standardized adapters — same prompts for all models
+- Reproducible evaluation — auditable run bundles
+- Transparent metrics — open-source scoring
 
-```bibtex
-@article{
-liang2023holistic,
-title={Holistic Evaluation of Language Models},
-author={Percy Liang and Rishi Bommasani and Tony Lee and Dimitris Tsipras and Dilara Soylu and Michihiro Yasunaga and Yian Zhang and Deepak Narayanan and Yuhuai Wu and Ananya Kumar and Benjamin Newman and Binhang Yuan and Bobby Yan and Ce Zhang and Christian Alexander Cosgrove and Christopher D Manning and Christopher Re and Diana Acosta-Navas and Drew Arad Hudson and Eric Zelikman and Esin Durmus and Faisal Ladhak and Frieda Rong and Hongyu Ren and Huaxiu Yao and Jue WANG and Keshav Santhanam and Laurel Orr and Lucia Zheng and Mert Yuksekgonul and Mirac Suzgun and Nathan Kim and Neel Guha and Niladri S. Chatterji and Omar Khattab and Peter Henderson and Qian Huang and Ryan Andrew Chi and Sang Michael Xie and Shibani Santurkar and Surya Ganguli and Tatsunori Hashimoto and Thomas Icard and Tianyi Zhang and Vishrav Chaudhary and William Wang and Xuechen Li and Yifan Mai and Yuhui Zhang and Yuta Koreeda},
-journal={Transactions on Machine Learning Research},
-issn={2835-8856},
-year={2023},
-url={https://openreview.net/forum?id=iO4LZibEqW},
-note={Featured Certification, Expert Certification}
-}
-```
+## Community-Driven
+
+Legal-10 is community-governed, not vendor-controlled. We ask for your help in pushing this benchmark initiative. We need a fair and comprehensive benchmark that end users can rely on to better understand the quality implications of a product they are using or considering.
+
+**Benefits:** Co-author credit on papers, governance voting rights, contributor recognition
+
+---
+
+## Skill Definitions & Professional Standards Mapping
+
+### Category of Legal Work Performed by AI or Legal-AI
+
+**Defining What Skills are Required to Perform Legal Work**
+
+- **MacCrate Report:** American Bar Association. (1992). Legal education and professional development: An educational continuum (Report of the Task Force on Law Schools and the Profession: Narrowing the Gap), 138–141 (Skill § 3).
+- **AALL Principles:** American Association of Law Libraries. (2013). Principles and standards for legal research competencies. Standard II & III.
+- **Shultz & Zedeck:** Shultz, M. M., & Zedeck, S. (2011). Predicting lawyer effectiveness: Broadening the basis for law school admission decisions. Law & Social Inquiry, 36(3), 620-661.
+
+This study operationalizes the MacCrate Report's foundational skills, the AALL's competency standards, and the empirical factors identified by Shultz & Zedeck. Each of the ten categories represents a distinct cognitive "circuit" that is required for effective legal practice.
+
+### Skill 1. Formulating a Research Plan
+
+- **MacCrate Citation:** Skill § 3.3(a): Requiring the ability to "identify the full range of search strategies" and "devising and implementing a coherent and effective research design."
+- **AALL Citation:** Principle II, Standard 1: "A successful legal researcher... identifies the best search strategy for the research need."
+- **Shultz & Zedeck:** Factor 14: Strategic Planning. "Plans and strategizes to address present and future issues and goals."
+
+**The Skill:** Constructing a systematic research strategy that identifies relevant legal issues, selects appropriate sources and search methods, sequences tasks efficiently, and establishes scope parameters before execution begins.
+
+### Skill 2. Strategic Stopping
+
+- **MacCrate Citation:** Skill § 3.3(a)(iii): Explicitly requires "assessing the feasibility of research strategies" in terms of "time and financial constraints." Skill § 3.3(b) requires the lawyer to "monitor the results" and "modify the plan," which implicitly includes the decision to terminate the plan.
+- **AALL Citation:** Principle II, Standard 4: "Recognizes when sufficient research has been done to adequately address the legal issue." (This is the literal "stopping rule" standard).
+- **Shultz & Zedeck:** Factor 13: Organizing and Managing One's Own Work. "Uses time efficiently... allocates time in proportion to importance of task." Factor 12 (Strategic Planning) also covers "allocating resources" effectively.
+
+**The Skill:** Knowing when sufficient research has been conducted to answer the legal question with a high degree of confidence, and when further searching is diminishing returns or "churning." It involves the cognitive "switch" from seeking to synthesizing.
+
+### Skill 3. Finding Known Authority
+
+- **MacCrate Citation:** Skill § 3.2: "Knowledge of the Fundamental Tools of Legal Research," including the ability to utilize "primary and secondary sources."
+- **AALL Citation:** Principle II, Standard 2: "Demonstrates the ability to find the full text of the case or statute... given a legal citation."
+- **Shultz & Zedeck:** Factor 6: Fact Finding. "Able to identify relevant facts and issues in case."
+
+**The Skill:** Precise retrieval of a specific legal authority or record item when the target is already identified by a citation or other unique handle (case cite, statute section, docket entry, rule number, Bates range, exhibit ID).
+
+### Skill 4. Finding Unknown Authority
+
+- **MacCrate Citation:** Skill § 3.2(a): The ability to use "secondary sources" as "tools for finding primary authority."
+- **AALL Citation:** Principle II, Standard 3: "Given a legal topic, demonstrate the ability to identify secondary sources... to find relevant primary law."
+- **Shultz & Zedeck:** Factor 7: Researching the Law. "Utilizes appropriate sources and strategies to identify issues and derive solutions."
+
+**The Skill:** Discovering relevant legal authority when the citation to be used is yet unknown. This process involves examining the fact pattern, issue, or question and iteratively retrieving, refining, and selecting controlling/persuasive sources.
+
+### Skill 5. Updating and Validating Authority
+
+- **MacCrate Citation:** Skill § 3.1: "Knowledge of the Nature of Legal Rules," including understanding "the hierarchy of authority."
+- **AALL Citation:** Principle III, Standard 2: "Checks the currency of the law... [and] verifies that the authority is current and still good law."
+- **Shultz & Zedeck:** Factor 5: Researching the Law. (Implicit in identifying current solutions).
+
+**The Skill:** Verifying that a legal authority remains valid by checking subsequent treatment (overruled, distinguished, questioned, followed), legislative amendments, or other developments affecting its precedential value.
+
+### Skill 6. Fact Extraction
+
+- **MacCrate Citation:** Skill § 4.1: "Factual Investigation," including the ability to "identify factual issues" and "determine the nature of the needed facts."
+- **AALL Citation:** [Gap — AALL focuses on legal research, not document review. Consider noting this as an extension.]
+- **Shultz & Zedeck:** Factor 6: Fact Finding. "Able to identify relevant facts and issues in case."
+
+**The Skill:** Identifying, extracting, and organizing legally relevant facts from source documents (contracts, discovery materials, transcripts, filings) to support analysis or case strategy.
+
+### Skill 7. Distinguishing Cases
+
+- **MacCrate Citation:** Skill § 3.3(c): "Evaluating information... distinguishing cases on their facts and reasoning."
+- **AALL Citation:** Principle IV, Standard 1: "Analyzes information to determine its relevance to the specific research need."
+- **Shultz & Zedeck:** Factor 1: Analysis and Reasoning. "Uses analytical skills, logic, and reasoning to approach problems and to formulate conclusions."
+
+**The Skill:** Analyzing whether a precedent applies by comparing material facts, legal issues, and reasoning, and articulating grounds on which it can be distinguished or must be followed.
+
+### Skill 8. Synthesizing Results
+
+- **MacCrate Citation:** Skill § 2.2: "Legal Analysis and Reasoning... synthesizing the holdings of multiple cases."
+- **AALL Citation:** Principle IV, Standard 2: "Integrates the results of the research into a cohesive argument or product."
+- **Shultz & Zedeck:** Factor 9: Writing. "Writes clearly, efficiently and persuasively."
+
+**The Skill:** Integrating holdings, rules, and reasoning from multiple authorities into a coherent legal principle, argument, or work product that addresses the research question comprehensively.
+
+### Skill 9. Citation Integrity
+
+- **MacCrate Citation:** Skill § 10: "Recognizing and Resolving Ethical Dilemmas," specifically the duty of candor to the tribunal.
+- **AALL Citation:** Principle V, Standard 1: "Distinguishes between ethical and unethical uses of information... correctly attributes ideas and text to original sources."
+- **Shultz & Zedeck:** Factor 21: Integrity & Honesty. "Has core values and beliefs; acts with integrity and honesty."
+
+**The Skill:** Ensuring all cited authorities (a) actually exist, (b) accurately support the propositions cited, (c) are properly attributed, and (d) include disclosure of adverse authority as required by professional obligations.
+
+### Skill 10. Copyright Compliance
+
+- **MacCrate Citation:** Skill § 10: "Recognizing and Resolving Ethical Dilemmas," including compliance with applicable law.
+- **AALL Citation:** Principle V, Standard 1: "Distinguishes between ethical and unethical uses of information... respects intellectual property rights."
+- **Shultz & Zedeck:** Factor 21: Integrity & Honesty. "Acts with integrity and honesty."
+
+**The Skill:** Refusing to reproduce protected content verbatim, respecting intellectual property boundaries, and minimizing memorization-based reproduction of copyrighted material.
+
+### Global Extension Module - Multilingual Reasoning
+
+- **MacCrate Citation:** [Gap — 1992 report is US-centric. Consider framing as extension for global legal AI deployment.]
+- **AALL Citation:** [Gap — 2013 standards are US-focused.]
+- **Shultz & Zedeck:** Factor 26: "Able to See the World Through the Eyes of Others." Factor 4: Practical Judgment — applicable across contexts.
+
+**The Skill:** Applying legal reasoning consistently across languages, jurisdictions, and legal traditions without systematic performance degradation or bias introduced by linguistic factors.
