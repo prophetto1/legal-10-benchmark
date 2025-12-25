@@ -2,9 +2,26 @@ site_name: LEGAL-10 BENCHMARK
 repo_url: https://github.com/prophetto1/legal-10-benchmark/
 edit_uri: blob/main/docs/
 theme:
-  name: readthedocs
-  highlightjs: false
-  navigation_depth: 1
+  name: material
+  language: en
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - toc.integrate
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: pink
+    - scheme: slate
+      primary: indigo
+      accent: pink
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
 plugins:
   - search
   # Temporarily disabled - requires helm package installation
@@ -26,6 +43,17 @@ plugins:
   #             ignore_init_summary: true
 
   - include-markdown
+markdown_extensions:
+  - admonition
+  - footnotes
+  - toc:
+      permalink: true
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+      linenums: true
+  - pymdownx.details
+  - pymdownx.emoji
 # Temporarily disabled - requires helm package installation
 # hooks:
 #   - docs/mkdocs_hooks.py
@@ -40,10 +68,8 @@ nav:
     - Legal-10: index.md
     - Mission Statement: mission_statement.md
     - Standards: standards.md
-    - Why Legal-10: why_legal_10.md
     - Evaluation Architecture: framework.md
   - LEGAL-10 BENCHMARKS:
-    - introduction.md
     - skill_1_research_planning.md
     - skill_2_strategic_stopping.md
     - skill_3_known_authority.md
