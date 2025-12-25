@@ -1,3 +1,6 @@
+/* Import fonts used across the site */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&family=Roboto+Mono:wght@400;500;600&display=swap');
+
 /* From https://mkdocstrings.github.io/python/customization/#recommended-style-readthedocs */
 
 /* Indentation. */
@@ -6,85 +9,164 @@ div.doc-contents:not(.first), div.doc-class > div.doc-contents {
   border-left: .05rem solid rgba(200, 200, 200, 0.2);
 }
 
-/* Responsive tables - prevent horizontal scroll */
+/* Responsive tables */
 table {
   display: block;
   width: 100%;
   overflow-x: auto;
-  font-size: 0.9em;
 }
 
 table th, table td {
   white-space: normal;
   word-wrap: break-word;
+  padding: 3pt 6pt !important;
+  line-height: 1.2 !important;
 }
 
-/* Adjusted font sizes - apply globally */
-body {
-  font-size: 15px;
+/* CSS Variables override for MkDocs Material */
+:root {
+  --md-text-font: "Open Sans", sans-serif;
+  --md-code-font: "Roboto Mono", monospace;
 }
 
-h1 {
-  font-size: 2em;
+/* Custom typography - Open Sans to match docx */
+.md-content .md-typeset {
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  line-height: 1.3!important;
 }
 
-h2 {
-  font-size: 1.5em;
+/* P = 16px, 500 weight, B/A = 2 and 6 */
+.md-content .md-typeset p {
+  margin-top: 2pt !important;
+  margin-bottom: 6pt !important;
 }
 
-h3 {
-  font-size: 1.2em;
+/* H1 = 18px, 700 bold, all caps, dark grayish */
+.md-content .md-typeset h1 {
+  font-size: 18px !important;
+  font-weight: 700 !important;
+  margin-top: 8pt !important;
+  margin-bottom: 8pt !important;
+  line-height: 1 !important;
+  text-transform: uppercase !important;
+  color: #4a4a4a !important;
 }
 
-p, li, td, th {
-  font-size: 1em;
-  line-height: 1.6;
+/* H2 = 16px, 600 semibold, all caps, dark grayish */
+.md-content .md-typeset h2 {
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  margin-top: 4pt !important;
+  margin-bottom: 4pt !important;
+  text-transform: uppercase !important;
+  color: #4a4a4a !important;
 }
 
-code, pre {
-  font-size: 0.9em;
+/* H2 immediately after H1: B/A = 0 and 8 */
+.md-content .md-typeset h1 + h2 {
+  margin-top: 0 !important;
+  margin-bottom: 6pt !important;
 }
 
-/* Fix left navigation positioning - prevent jumping */
-.wy-nav-side {
-  position: fixed !important;
-  top: 0 !important;
-  left: 0 !important;
-  height: 100% !important;
-  overflow-y: auto !important;
+/* H3 = 16px, 600 semibold, B/A = 6 and 6 */
+.md-content .md-typeset h3 {
+  font-size: 15px !important;
+  font-weight: 600 !important;
+  margin-top: 4pt !important;
+  margin-bottom: 4pt !important;
 }
 
-.wy-side-scroll {
-  position: relative !important;
-  height: 100% !important;
+/* H3 immediately after H1 or H2: B/A = 2 and 6 */
+.md-content .md-typeset h1 + h3,
+.md-content .md-typeset h2 + h3 {
+  margin-top: 2pt !important;
+  margin-bottom:2pt !important;
 }
 
-/* Ensure content area accounts for fixed sidebar */
-.wy-nav-content-wrap {
-  margin-left: 300px !important;
+/* H4 and below = same as P */
+.md-content .md-typeset h4 {
+  font-size: 15px !important;
+  font-weight: 500 !important;
+  margin-top: 4pt !important;
+  margin-bottom: 4pt !important;
 }
 
-/* Hide search bar */
-.wy-side-nav-search {
-  display: none !important;
+/* Lists inherit P styling */
+.md-content .md-typeset ul,
+.md-content .md-typeset ol {
+  margin-top: 4pt !important;
+  margin-bottom: 4pt !important;
 }
 
-/* Center and style the site title in the nav bar */
-.wy-nav-top {
-  background: #2980b9 !important;
-  text-align: center !important;
-  line-height: 50px !important;
+.md-content .md-typeset li {
+  font-size: 14px !important;
+  font-weight: 500 !important;
 }
 
-.wy-nav-top a {
-  display: block !important;
-  width: 100% !important;
-  text-align: center !important;
-  font-weight: bold !important;
-  font-size: 1.2em !important;
+/* Table header = 13px, 600 */
+.md-content .md-typeset th {
+  font-size: 13px !important;
+  font-weight: 600 !important;
 }
 
-/* Hide the mobile menu icon */
-.wy-nav-top i {
-  display: none !important;
+/* Table content = 13px, 500 */
+.md-content .md-typeset td {
+  font-size: 13px !important;
+  font-weight: 500 !important;
+}
+
+/* Reduce space before/after table */
+.md-content .md-typeset table {
+  margin-top: 4pt !important;
+  margin-bottom: 6pt !important;
+}
+
+/* Target table wrapper */
+.md-content .md-typeset .md-typeset__table {
+  margin-top: 2pt !important;
+  margin-bottom: 4pt !important;
+}
+
+/* H2 or H3 before table: reduce bottom margin */
+.md-content .md-typeset h2 + table,
+.md-content .md-typeset h3 + table {
+  margin-top: 0 !important;
+}
+
+/* Reduce space between top nav and H1, add space before footer */
+.md-content {
+  padding-top: 0 !important;
+  padding-bottom: 60px !important;
+}
+
+.md-content .md-typeset h1:first-child {
+  margin-top: 0 !important;
+}
+
+/* P before H1: add 4pt more space (P gives 6 + H1 gets 14 = 20 total) */
+.md-content .md-typeset p + h1 {
+  margin-top: 14pt !important;
+}
+
+/* P before H2: add 4pt more space (P gives 6 + H2 gets 12 = 18 total) */
+.md-content .md-typeset p + h2 {
+  margin-top: 12pt !important;
+}
+
+/* Top navigation tabs */
+.md-tabs__link {
+  font-family: 'Open Sans', sans-serif !important;
+  font-size: 18px !important;
+  font-weight: 600 !important;
+  text-transform: uppercase !important;
+}
+
+/* Side navigation font size */
+.md-nav {
+  font-size: 14px;
+}
+
+.md-nav__link {
+  font-size: 14px;
 }

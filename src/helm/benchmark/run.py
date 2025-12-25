@@ -304,6 +304,8 @@ def build_parser():
     parser.add_argument(
         "-c",
         "--conf-paths",
+        "--conf",
+        "--conf-file",
         nargs="+",
         help="Where to read RunSpecs to run from",
         default=[],

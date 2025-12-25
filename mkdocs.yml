@@ -7,21 +7,23 @@ theme:
   features:
     - navigation.tabs
     - navigation.sections
-    - navigation.top
     - toc.integrate
     - search.suggest
     - search.highlight
     - content.code.copy
   palette:
     - scheme: default
-      primary: indigo
-      accent: pink
+      primary: white
+      accent: grey
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to dark mode
     - scheme: slate
-      primary: indigo
-      accent: pink
+      primary: black
+      accent: grey
       toggle:
         icon: material/weather-night
-        name: Switch to dark mode
+        name: Switch to light mode
 plugins:
   - search
   # Temporarily disabled - requires helm package installation

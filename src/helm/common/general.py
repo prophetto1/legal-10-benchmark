@@ -1,10 +1,16 @@
 from filelock import FileLock
+import gzip
 import json
 import os
 import shlex
+import shutil
 import subprocess
 import urllib
+import urllib.parse
+import urllib.request
 import uuid
+import tarfile
+import zipfile
 import zstandard
 from typing import Any, Callable, Dict, List, Optional, TypeVar
 from datetime import datetime, date
@@ -82,65 +88,104 @@ def ensure_file_downloaded(
     unpack_type: Optional[str] = None,
 ):
     """Download `source_url` to `target_path` if it doesn't exist."""
+
+    def _is_within_directory(directory: str, target: str) -> bool:
+        abs_directory = os.path.abspath(directory)
+        abs_target = os.path.abspath(target)
+        try:
+            return os.path.commonpath([abs_directory, abs_target]) == abs_directory
+        except ValueError:
+            # Happens on Windows when paths are on different drives.
+            return False
+
+    def _download_to_tmp_path(url: str, tmp_path: str) -> None:
+        # `gdown` is used to download large files from Google Drive. In practice, some scenarios also
+        # force it for non-Drive URLs (e.g., Codalab), so keep honoring `downloader_executable="gdown"`.
+        if downloader_executable == "gdown" or url.startswith("https://drive.google.com"):
+            try:
+                import gdown  # noqa
+            except ModuleNotFoundError as e:
+                handle_module_not_found_error(e, ["scenarios"])
+            output_path = gdown.download(url=url, output=tmp_path, quiet=False)  # type: ignore[attr-defined]
+            if not output_path:
+                raise Exception(f"Failed to download {url} via gdown")
+            return
+
+        with urllib.request.urlopen(url) as response, open(tmp_path, "wb") as out:
+            shutil.copyfileobj(response, out)
+
+    # Ensure parent directory exists so the lock/tmp files can be created.
+    ensure_directory_exists(os.path.dirname(os.path.abspath(target_path)))
+
     with FileLock(f"{target_path}.lock"):
         if os.path.exists(target_path):
             # Assume it's all good
             hlog(f"Not downloading {source_url} because {target_path} already exists")
             return
 
-        # Download
-        # gdown is used to download large files/zip folders from Google Drive.
-        # It bypasses security warnings which wget cannot handle.
-        if source_url.startswith("https://drive.google.com"):
-            try:
-                import gdown  # noqa
-            except ModuleNotFoundError as e:
-                handle_module_not_found_error(e, ["scenarios"])
-            downloader_executable = "gdown"
         tmp_path: str = f"{target_path}.tmp"
-        shell([downloader_executable, source_url, "-O", tmp_path])
+        try:
+            _download_to_tmp_path(source_url, tmp_path)
+        except Exception:
+            if os.path.exists(tmp_path):
+                os.unlink(tmp_path)
+            raise
 
         # Unpack (if needed) and put it in the right location
         if unpack:
-            if unpack_type is None:
+            inferred_unpack_type = unpack_type
+            if inferred_unpack_type is None:
                 if source_url.endswith(".tar") or source_url.endswith(".tar.gz"):
-                    unpack_type = "untar"
+                    inferred_unpack_type = "untar"
                 elif source_url.endswith(".zip"):
-                    unpack_type = "unzip"
+                    inferred_unpack_type = "unzip"
                 elif source_url.endswith(".zst"):
-                    unpack_type = "unzstd"
+                    inferred_unpack_type = "unzstd"
                 else:
                     raise Exception("Failed to infer the file format from source_url. Please specify unpack_type.")
 
             tmp2_path = target_path + ".tmp2"
             ensure_directory_exists(tmp2_path)
-            if unpack_type == "untar":
-                shell(["tar", "xf", tmp_path, "-C", tmp2_path])
-            elif unpack_type == "unzip":
-                shell(["unzip", tmp_path, "-d", tmp2_path])
-            elif unpack_type == "unzstd":
+            if inferred_unpack_type == "untar":
+                with tarfile.open(tmp_path, "r:*") as tar:
+                    for member in tar.getmembers():
+                        member_path = os.path.join(tmp2_path, member.name)
+                        if not _is_within_directory(tmp2_path, member_path):
+                            raise Exception(f"Unsafe tar member path: {member.name}")
+                    tar.extractall(tmp2_path)
+            elif inferred_unpack_type == "unzip":
+                with zipfile.ZipFile(tmp_path) as zf:
+                    for member in zf.namelist():
+                        member_path = os.path.join(tmp2_path, member)
+                        if not _is_within_directory(tmp2_path, member_path):
+                            raise Exception(f"Unsafe zip member path: {member}")
+                    zf.extractall(tmp2_path)
+            elif inferred_unpack_type == "unzstd":
                 dctx = zstandard.ZstdDecompressor()
                 with open(tmp_path, "rb") as ifh, open(os.path.join(tmp2_path, "data"), "wb") as ofh:
                     dctx.copy_stream(ifh, ofh)
             else:
                 raise Exception("Invalid unpack_type")
+
             files = os.listdir(tmp2_path)
             if len(files) == 1:
                 # If contains one file, just get that one file
-                shell(["mv", os.path.join(tmp2_path, files[0]), target_path])
+                shutil.move(os.path.join(tmp2_path, files[0]), target_path)
                 os.rmdir(tmp2_path)
             else:
-                shell(["mv", tmp2_path, target_path])
+                os.replace(tmp2_path, target_path)
             os.unlink(tmp_path)
         else:
             # Don't decompress if desired `target_path` ends with `.gz`.
             if source_url.endswith(".gz") and not target_path.endswith(".gz"):
                 gzip_path = f"{target_path}.gz"
-                shell(["mv", tmp_path, gzip_path])
-                # gzip writes its output to a file named the same as the input file, omitting the .gz extension
-                shell(["gzip", "-d", gzip_path])
+                os.replace(tmp_path, gzip_path)
+                with gzip.open(gzip_path, "rb") as ifh, open(target_path, "wb") as ofh:
+                    shutil.copyfileobj(ifh, ofh)
+                os.unlink(gzip_path)
             else:
-                shell(["mv", tmp_path, target_path])
+                os.replace(tmp_path, target_path)
+
         hlog(f"Finished downloading {source_url} to {target_path}")
 
 
