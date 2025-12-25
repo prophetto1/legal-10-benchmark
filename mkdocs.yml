@@ -34,6 +34,8 @@ extra_css:
 watch:
   - src
 nav:
+  - L-10 AGENTIC BENCHMARK:
+    - Introducing L-10 Agentic Benchmark: agentic_research.md
   - ABOUT LEGAL-10:
     - Legal-10: index.md
     - Mission Statement: mission_statement.md
@@ -57,6 +59,3 @@ nav:
   - CONTRIBUTE:
     - Who We Need: who_we_need.md
     - Good First Issues: good_first_issues.md
-  - GUIDES:
-    - user_guide.md
-    - developer_guide.md
