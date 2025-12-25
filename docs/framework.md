@@ -1,4 +1,4 @@
-# Framework
+# Evaluation Architecture
 
 Legal-10 is an open evaluation framework for legal AI. We open-source everything: datasets, harness, scoring, and operational tooling. Every evaluation produces auditable run bundles with prompt-level transparency—what went in, what came out, how it was scored. Anyone can reproduce the results.
 
