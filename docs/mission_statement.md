@@ -32,4 +32,6 @@ We open-source everything: datasets, harness, scoring, and operational tooling. 
 
 Legal-10 is community-governed, not vendor-controlled. We ask for your help in pushing this benchmark initiative. We need a fair and comprehensive benchmark that end users can rely on to better understand the quality implications of a product they are using or considering.
 
-**Benefits:** Co-author credit on papers, governance voting rights, contributor recognition
+**Benefit** 
+
+Co-author credit on papers, governance voting rights, contributor recognition

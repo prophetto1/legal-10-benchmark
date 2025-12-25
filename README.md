@@ -1,14 +1,12 @@
 # Legal-10 Benchmark
 
-Legal AI is already being used to make decisions that affect liberty, employment, housing, immigration status, family stability, and access to counsel. Today's evaluation ecosystem is fragmented, vendor-permissioned, and often optimized for optics rather than end-user protection.
-
 Legal-10 is an open, skill-based benchmark suite designed to make legal AI performance inspectable, comparable, and auditable—across three delivery modalities: Closed-Book (CB), Retrieval-Augmented Generation (RAG), and Agentic Workflows (AG).
 
-We open-source everything: datasets, harness, scoring, and operational tooling. The only exception is the actual administered test data, which remains private to prevent contamination and prior knowledge. We support evaluation of both open-weight and closed API models via a reproducible run-bundle protocol.
+We open-source everything: datasets, harness, scoring, and operational tooling, while ensuring we protect test We will release benchmark. We support evaluation of both open-weight and closed API models via a reproducible run-bundle protocol.
 
 ## Key Principle
 
-**Grounded in Professional Standards.** Legal skills are not one task.
+**Grounded in Professional Standards.** 
 
 - MacCrate Report (ABA, 1992) — foundational lawyering skills
 - AALL Principles & Standards (2013) — legal research competency standards
@@ -22,15 +20,15 @@ Testing conducted using three modalities of Agentic Workflow (AG), RAG, or Close
 
 | Skill | Name | Modality | Dataset |
 |-------|------|----------|---------|
-| **S1** | Research Planning | AG | LegalAgentBench |
-| **S2** | Strategic Stopping | AG | LegalAgentBench |
+| **S1** | Research Planning | AG | L10 AG |
+| **S2** | Strategic Stopping | AG | L10 AG |
 | **S3** | Known Authority | RAG | CLERC |
-| **S4** | Unknown Authority | RAG | CLERC (semantic) |
-| **S5** | Validate Authority | RAG | KeyCite-CLERC |
+| **S4** | Unknown Authority | RAG | CLERC |
+| **S5** | Validate Authority | RAG | CLERC |
 | **S6** | Fact Extraction | RAG | CUAD |
 | **S7** | Distinguish Cases | CB | CaseHOLD |
 | **S8** | Synthesize Results | CB | LEXam |
-| **S9** | Citation Integrity | CB | Dahl 10-types |
+| **S9** | Citation Integrity | CB |  |
 | **S10** | Copyright Compliance | CB | SHIELD |
 
 ### Extensions
@@ -39,48 +37,22 @@ Testing conducted using three modalities of Agentic Workflow (AG), RAG, or Close
 |---|------|----------|---------|
 | **1** | Multilingual Reasoning | CB | FairLex |
 
-## Design Principles
+## Transparent, Community-Driven
 
-### Objectivity
-- Fixed spec per version — changes bump the version
-- No selective omission or quiet withdrawal — full eval split or no score
-
-### Transparency
-- Open-source harness — datasets, scoring, tools
-- Auditable run bundles — SHA-256 hashes, signed manifests
+- open-source harness, datasets, assessment criteria
+- Auditable run bundles, SHA-256 hashes, signed manifests
+- Maintain transparent coverage disclosure, governance
 - Public append-only log — all submissions preserved
 
-### Fairness
-- Comparable baselines — open and closed models use identical harness
-- Modality-matched testing — CB vs RAG vs AG reflects real lawyer workflows
+## Objective, Informative
 
-### Gaming-Resistant
-- No selective omission → must run all 10 skills
-- Skill-level reporting → can't hide weak skills in aggregate
-- Visible failure modes → can't hide how it failed
+- ensure understanding of quality implications of products being used by industry end users.
+- ensure evaluations are controlled so reports are objective and purposeful
+- Built using Stanford CFRM HELM (Holistic Evaluation of Language Models) Architecture
 
 ## Scoreboard Policy
 
-Participation is your choice. We will:
-
-1. List all evaluated systems with linked run bundles ("Evaluated")
-2. Maintain a neutral "Not Yet Evaluated" coverage list
-
-**Coverage disclosure.** Each "Not Yet Evaluated" entry includes a neutral status tag (e.g., "no public endpoint," "access restricted," "awaiting community submission").
-
-This ensures: Fair comparison across GPT-4, Claude, Llama, and other models using identical evaluation protocols.
-
-## Architecture
-
-Legal-10 implements the evaluation architecture pioneered by Stanford CRFM's HELM (Holistic Evaluation of Language Models). We chose this foundation because it embodies the values we believe legal AI evaluation requires:
-
-- Unified model interface — open-weight + closed API
-- Standardized adapters — same prompts for all models
-- Reproducible evaluation — auditable run bundles
-- Transparent metrics — open-source scoring
-
-## Community-Driven
-
-Legal-10 is community-governed, not vendor-controlled. We ask for your help in pushing this benchmark initiative. We need a fair and comprehensive benchmark that end users can rely on to better understand the quality implications of a product they are using or considering.
-
-**Benefits:** Co-author credit on papers, governance voting rights, contributor recognition
+- No one games system. Make it transparently clear. 
+- No selective omission or quiet withdrawal → if 10, then run all 10. 
+- Skill-level reporting → system prevents unsatisfactory areas or skills from being hidden 
+- system prevents failures from being hidden 

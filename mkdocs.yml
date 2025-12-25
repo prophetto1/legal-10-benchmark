@@ -1,4 +1,4 @@
-site_name: LEGAL-10 BENCHMARK
+site_name: L10 BENCH
 repo_url: https://github.com/prophetto1/legal-10-benchmark/
 edit_uri: blob/main/docs/
 theme:
@@ -6,8 +6,8 @@ theme:
   language: en
   features:
     - navigation.tabs
+    - navigation.tabs.sticky
     - navigation.sections
-    - toc.integrate
     - search.suggest
     - search.highlight
     - content.code.copy
@@ -64,26 +64,28 @@ extra_css:
 watch:
   - src
 nav:
-  - L-10 AGENTIC BENCHMARK:
-    - Introducing L-10 Agentic Benchmark: agentic_research.md
-  - ABOUT LEGAL-10:
+  - ABOUT L10:
     - Legal-10: index.md
     - Mission Statement: mission_statement.md
     - Standards: standards.md
     - Evaluation Architecture: framework.md
-  - LEGAL-10 BENCHMARKS:
-    - skill_1_research_planning.md
-    - skill_2_strategic_stopping.md
-    - skill_3_known_authority.md
-    - skill_4_unknown_authority.md
-    - skill_5_validate_authority.md
-    - skill_6_fact_extraction.md
-    - skill_7_distinguish_cases.md
-    - skill_8_synthesize_results.md
-    - skill_9_citation_integrity.md
-    - skill_10_copyright_compliance.md
-  - EXTENSIONS:
-    - extension_multilingual.md
+  - L10 AGENTIC:
+    - Introducing L10 Agentic: agentic_research.md
+  - BENCHMARKS:
+    - Benchmarks Overview: benchmarks.md
+    - "Skill 1: Research Planning": skill_1_research_planning.md
+    - "Skill 2: Strategic Stopping": skill_2_strategic_stopping.md
+    - "Skill 3: Finding Known Authority": skill_3_known_authority.md
+    - "Skill 4: Finding Unknown Authority": skill_4_unknown_authority.md
+    - "Skill 5: Updating and Validating Authority": skill_5_validate_authority.md
+    - "Skill 6: Fact Extraction": skill_6_fact_extraction.md
+    - "Skill 7: Distinguishing Cases": skill_7_distinguish_cases.md
+    - "Skill 8: Synthesizing Results": skill_8_synthesize_results.md
+    - "Skill 9: Citation Integrity": skill_9_citation_integrity.md
+    - "Skill 10: Copyright Compliance": skill_10_copyright_compliance.md
+    - Extensions (Future): extension_multilingual.md
   - CONTRIBUTE:
     - Who We Need: who_we_need.md
     - Good First Issues: good_first_issues.md
+  - SCOREBOARD:
+    - scoreboard.md
